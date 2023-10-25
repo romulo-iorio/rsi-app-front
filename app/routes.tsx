@@ -1,4 +1,4 @@
-import { Login } from "./pages";
+import * as Pages from "./pages";
 
 interface RouteProps {
   Component: React.PropsWithChildren<any>;
@@ -8,9 +8,19 @@ interface RouteProps {
 
 const pages: RouteProps[] = [
   {
-    Component: Login,
+    Component: Pages.ForgotPassword,
+    name: "Recuperar senha",
+    path: "/forgot-password",
+  },
+  {
+    Component: Pages.Login,
     name: "Login",
     path: "/",
+  },
+  {
+    Component: Pages.NewPassword,
+    name: "Mudar senha",
+    path: "/change-password",
   },
 ];
 
