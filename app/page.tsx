@@ -1,8 +1,10 @@
+"use client";
+
 import { useMemo } from "react";
 import Link from "next/link";
 
+import { PageLayout } from "./components";
 import pages from "./routes";
-import PageLayout from "./components/PageLayout";
 
 const Home = () => {
   const Pages = useMemo(
