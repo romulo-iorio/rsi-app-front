@@ -1,11 +1,23 @@
-import { Background, Clipboard } from "./components";
+import { useMemo } from "react";
+import Link from "next/link";
 
-const Home = () => (
-  <Background>
-    <Clipboard>
-      <h1>Home</h1>
-    </Clipboard>
-  </Background>
-);
+import pages from "./routes";
+import PageLayout from "./components/PageLayout";
+
+const Home = () => {
+  const Pages = useMemo(
+    () =>
+      pages.map(({ Component, path, name }) => (
+        <Link key={path} href={path}>
+          <PageLayout title={name}>
+            <Component />
+          </PageLayout>
+        </Link>
+      )),
+    []
+  );
+
+  return <>{Pages}</>;
+};
 
 export default Home;
