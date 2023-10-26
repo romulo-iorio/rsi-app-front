@@ -8,7 +8,7 @@ export const PatientType: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content>
+      <BaseLayout.Content className="!justify-around !h-[75%]">
         <Button
           className={buttonsClassName}
           onClick={() => {}}
