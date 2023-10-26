@@ -1,6 +1,13 @@
 import { useState } from "react";
 
-import { InputWithLabel, Button, RadioWithLabel } from "@/app/components";
+import {
+  BaseContentContainer,
+  BaseButtonsContainer,
+  InputWithLabel,
+  RadioWithLabel,
+  Button,
+  BaseLayout,
+} from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const Register: React.FC = () => {
@@ -10,8 +17,8 @@ export const Register: React.FC = () => {
   const [experience, setExperience] = useState("");
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-start w-full h-[75%] gap-[2rem] overflow-x-hidden overflow-y-auto pb-[2rem]">
+    <BaseLayout.Root>
+      <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-auto pb-[2rem]">
         <InputWithLabel label="E-mail" placeholder="Preencha seu e-mail" />
 
         <InputWithLabel label="Nome" placeholder="Preencha seu nome" />
@@ -41,13 +48,13 @@ export const Register: React.FC = () => {
           onChange={setExperience}
           value={experience}
         />
-      </div>
+      </BaseLayout.Content>
 
-      <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
+      <BaseLayout.Buttons>
         <Button onClick={goToLogin} label="Voltar" />
 
         <Button onClick={goToPatientType} label="Entrar" />
-      </div>
-    </>
+      </BaseLayout.Buttons>
+    </BaseLayout.Root>
   );
 };

@@ -1,12 +1,12 @@
-import { InputWithLabel, Button } from "@/app/components";
+import { InputWithLabel, BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const NewPassword: React.FC = () => {
   const { goToLogin } = useRoutes();
 
   return (
-    <>
-      <div className="flex flex-col items-center justify-start w-full h-full gap-[2rem]">
+    <BaseLayout.Root>
+      <BaseLayout.Content>
         <InputWithLabel
           label="Senha"
           placeholder="Preencha sua nova senha"
@@ -18,11 +18,11 @@ export const NewPassword: React.FC = () => {
           placeholder="Confirme sua nova senha"
           password
         />
-      </div>
+      </BaseLayout.Content>
 
-      <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
+      <BaseLayout.Buttons>
         <Button label="Salvar" onClick={goToLogin} />
-      </div>
-    </>
+      </BaseLayout.Buttons>
+    </BaseLayout.Root>
   );
 };
