@@ -11,5 +11,7 @@ export const useRoutes = () => {
     goToPatientType: () => navigate("/patient-type"),
     goToNotICURespiratoryTractCheckUp1: () =>
       navigate("/not-icu-respiratory-tract-check-up-1"),
+    goToNotICURespiratoryTractCheckUp2: () =>
+      navigate("/not-icu-respiratory-tract-check-up-2"),
   };
 };
