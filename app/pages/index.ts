@@ -4,3 +4,4 @@ export * from "./Register";
 export * from "./Login";
 export * from "./PatientType";
 export * from "./NotICURespiratoryTractCheckUp1";
+export * from "./NotICURespiratoryTractCheckUp2";
