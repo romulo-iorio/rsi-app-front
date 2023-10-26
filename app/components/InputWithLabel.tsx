@@ -2,7 +2,9 @@ import type { IconType } from "react-icons";
 import { PiEyeBold, PiEyeClosedBold } from "react-icons/pi";
 import { useState } from "react";
 
-interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
+interface Props
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+  onChange: (value: string) => void;
   password?: boolean;
   label: string;
 }
@@ -14,6 +16,7 @@ enum PasswordType {
 
 export const InputWithLabel: React.FC<Props> = ({
   password,
+  onChange,
   label,
   ...props
 }) => {
@@ -43,6 +46,7 @@ export const InputWithLabel: React.FC<Props> = ({
         className="w-full h-[3rem] border-t-none border-l-none border-r-none border-b-2 border-black bg-[#E6E6E6] pl-[1rem] focus:outline-none focus:bg-[#EEE] rounded-md rounded-b-none"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
+        onChange={(e) => onChange(e.target.value)}
         type={inputType}
         {...props}
       />
