@@ -6,6 +6,8 @@ export const Login: React.FC = () => {
   const navigate = useNavigate();
 
   const goToForgotPassword = () => navigate("/forgot-password");
+  const goToRegistration = () => navigate("/register");
+  const goToFirstPage = () => navigate("/");
 
   return (
     <>
@@ -22,9 +24,9 @@ export const Login: React.FC = () => {
       <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
         <Button onClick={goToForgotPassword} label="Recuperar senha" />
 
-        <Button label="Cadastro" />
+        <Button onClick={goToRegistration} label="Cadastro" />
 
-        <Button label="Entrar" />
+        <Button onClick={goToFirstPage} label="Entrar" />
       </div>
     </>
   );
