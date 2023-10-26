@@ -11,7 +11,7 @@ export const NewPassword: React.FC = () => {
         />
 
         <InputWithLabel
-          label="Senha"
+          label="Confirmação da senha"
           placeholder="Confirme sua nova senha"
           password
         />
