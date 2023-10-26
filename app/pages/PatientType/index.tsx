@@ -4,7 +4,7 @@ import { useRoutes } from "@/app/hooks";
 const buttonsClassName = "!w-[20rem] !h-[7rem] !font-[2rem]";
 
 export const PatientType: React.FC = () => {
-  const { goToNotICURespiratoryTractCheckUp1 } = useRoutes();
+  const { goToNotICURespiratoryTractCheckUp1, goToLogin } = useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -21,6 +21,10 @@ export const PatientType: React.FC = () => {
           label="Paciente Não UTI"
         />
       </BaseLayout.Content>
+
+      <BaseLayout.Buttons>
+        <Button onClick={goToLogin} label="Voltar" />
+      </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
 };
