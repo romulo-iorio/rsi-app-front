@@ -4,3 +4,6 @@ export * from "./PageLayout";
 export * from "./Background";
 export * from "./Clipboard";
 export * from "./Button";
+export * from "./BaseContentContainer";
+export * from "./BaseButtonsContainer";
+export * from "./BaseLayout";
