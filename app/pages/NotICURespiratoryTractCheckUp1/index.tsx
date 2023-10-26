@@ -4,7 +4,7 @@ import { RadioWithLabel, BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const NotICURespiratoryTractCheckUp1: React.FC = () => {
-  const { goToPatientType } = useRoutes();
+  const { goToPatientType, goToNotICURespiratoryTractCheckUp2 } = useRoutes();
 
   const [hardIntubation, setHardIntubation] = useState("");
   const [apnea, setApnea] = useState("");
@@ -54,7 +54,7 @@ export const NotICURespiratoryTractCheckUp1: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToPatientType} label="Voltar" />
 
-        <Button onClick={() => {}} label="Próximo" />
+        <Button onClick={goToNotICURespiratoryTractCheckUp2} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
