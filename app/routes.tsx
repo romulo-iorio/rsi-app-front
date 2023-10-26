@@ -22,6 +22,11 @@ const pages: RouteProps[] = [
     name: "Mudar senha",
     path: "/change-password",
   },
+  {
+    Component: Pages.Register,
+    name: "Cadastro",
+    path: "/register",
+  },
 ];
 
 export default pages;
