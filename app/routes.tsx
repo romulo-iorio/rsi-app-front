@@ -20,7 +20,7 @@ const pages: RouteProps[] = [
   {
     Component: Pages.NewPassword,
     name: "Mudar senha",
-    path: "/change-password",
+    path: "/new-password",
   },
   {
     Component: Pages.Register,
@@ -31,6 +31,11 @@ const pages: RouteProps[] = [
     Component: Pages.PatientType,
     name: "Tipo de paciente",
     path: "/patient-type",
+  },
+  {
+    Component: Pages.NotICURespiratoryTractCheckUp1,
+    name: "Avaliação das vias aéreas",
+    path: "/not-icu-respiratory-tract-check-up-1",
   },
 ];
 
