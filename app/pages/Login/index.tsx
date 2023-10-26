@@ -7,7 +7,7 @@ export const Login: React.FC = () => {
 
   const goToForgotPassword = () => navigate("/forgot-password");
   const goToRegistration = () => navigate("/register");
-  const goToFirstPage = () => navigate("/");
+  const goToPatientType = () => navigate("/patient-type");
 
   return (
     <>
@@ -26,7 +26,7 @@ export const Login: React.FC = () => {
 
         <Button onClick={goToRegistration} label="Cadastro" />
 
-        <Button onClick={goToFirstPage} label="Entrar" />
+        <Button onClick={goToPatientType} label="Entrar" />
       </div>
     </>
   );

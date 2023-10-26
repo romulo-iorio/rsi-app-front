@@ -9,8 +9,8 @@ export const Register: React.FC = () => {
   const [profession, setProfession] = useState("");
   const [experience, setExperience] = useState("");
 
-  const goToFirstPage = () => navigate("/");
   const goBackToLogin = () => navigate("/");
+  const goToPatientType = () => navigate("/patient-type");
 
   return (
     <>
@@ -49,7 +49,7 @@ export const Register: React.FC = () => {
       <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
         <Button onClick={goBackToLogin} label="Voltar" />
 
-        <Button onClick={goToFirstPage} label="Entrar" />
+        <Button onClick={goToPatientType} label="Entrar" />
       </div>
     </>
   );

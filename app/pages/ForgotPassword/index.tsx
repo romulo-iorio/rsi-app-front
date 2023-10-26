@@ -6,6 +6,7 @@ export const ForgotPassword: React.FC = () => {
   const navigate = useNavigate();
 
   const goBackToLogin = () => navigate("/");
+  const goToPatientType = () => navigate("/patient-type");
 
   return (
     <>
@@ -16,7 +17,7 @@ export const ForgotPassword: React.FC = () => {
       <div className="absolute flex items-center justify-around w-[79%] h-[5rem] bottom-[3rem]">
         <Button label="Voltar" onClick={goBackToLogin} />
 
-        <Button label="Enviar" />
+        <Button label="Enviar" onClick={goToPatientType} />
       </div>
     </>
   );
