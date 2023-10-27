@@ -47,6 +47,11 @@ const pages: RouteProps[] = [
     name: "Avaliação das vias aéreas",
     path: "/icu-respiratory-tract-check-up-1",
   },
+  {
+    Component: Pages.ICURespiratoryTractCheckUp2,
+    name: "Avaliação das vias aéreas",
+    path: "/icu-respiratory-tract-check-up-2",
+  },
 ];
 
 export default pages;
