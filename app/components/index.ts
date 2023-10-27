@@ -8,3 +8,4 @@ export * from "./BaseContentContainer";
 export * from "./BaseButtonsContainer";
 export * from "./BaseLayout";
 export * from "./RadioWithLabelImageAndCaption";
+export * from "./ImageWithLabelAndCaptionOption";

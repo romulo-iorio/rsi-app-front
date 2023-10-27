@@ -1,10 +1,7 @@
-import Image from "next/image";
-
-export interface Option {
-  imageSrc: string;
-  caption: string;
-  label: string;
-}
+import {
+  ImageWithLabelAndCaptionOption,
+  Option,
+} from "./ImageWithLabelAndCaptionOption";
 
 interface Props {
   onChange: (newValue: string) => void;
@@ -13,35 +10,6 @@ interface Props {
   value: string;
 }
 
-interface OptionProps {
-  onChange: (newValue: string) => void;
-  option: Option;
-  value: string;
-}
-
-const Option: React.FC<OptionProps> = ({ option, value, onChange }) => {
-  const { imageSrc, caption, label } = option;
-
-  const checkedText = label === value ? "( X )" : "( )";
-
-  return (
-    <div
-      className="flex flex-col items-center justify-start cursor-pointer w-[12rem]"
-      onClick={() => onChange(label)}
-    >
-      <span className="flex items-center justify-start gap-[1rem]">
-        <p>{checkedText}</p>
-
-        <p>{label}</p>
-      </span>
-
-      <Image src={imageSrc} alt={label + caption} width={100} height={100} />
-
-      <p className="text-center text-[0.875rem] text-[#666]">{caption}</p>
-    </div>
-  );
-};
-
 export const RadioWithLabelImageAndCaption: React.FC<Props> = ({
   onChange,
   options,
@@ -49,7 +17,7 @@ export const RadioWithLabelImageAndCaption: React.FC<Props> = ({
   value,
 }) => {
   const renderOptions = options.map((option) => (
-    <Option
+    <ImageWithLabelAndCaptionOption
       onChange={onChange}
       key={option.label}
       option={option}
