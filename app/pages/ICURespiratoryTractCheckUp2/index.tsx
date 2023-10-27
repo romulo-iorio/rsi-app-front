@@ -23,14 +23,17 @@ export const ICURespiratoryTractCheckUp2: React.FC = () => {
       withCheckedText={false}
       key={option.label}
       option={option}
-      size={150}
+      size={160}
     />
   ));
 
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-hidden pb-[2rem] !gap-[1rem] !pt-[1rem]">
-        <div className="flex flex-wrap items-start justify-center text-black text-[1.125rem] gap-[2rem]">
+        <div
+          className="flex flex-wrap items-start justify-center text-black text-[1.125rem] gap-[2rem]"
+          style={{ rowGap: "0.5rem" }}
+        >
           {renderImages}
         </div>
       </BaseLayout.Content>
