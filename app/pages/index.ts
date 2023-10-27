@@ -7,3 +7,4 @@ export * from "./NotICURespiratoryTractCheckUp1";
 export * from "./NotICURespiratoryTractCheckUp2";
 export * from "./ICURespiratoryTractCheckUp1";
 export * from "./ICURespiratoryTractCheckUp2";
+export * from "./Positioning";

@@ -17,5 +17,6 @@ export const useRoutes = () => {
       navigate("/icu-respiratory-tract-check-up-1"),
     goToICURespiratoryTractCheckUp2: () =>
       navigate("/icu-respiratory-tract-check-up-2"),
+    goToPositioning: () => navigate("/positioning"),
   };
 };
