@@ -16,7 +16,7 @@ const imagesOptions: Option[] = [
 ];
 
 export const ICURespiratoryTractCheckUp2: React.FC = () => {
-  const { goToICURespiratoryTractCheckUp1 } = useRoutes();
+  const { goToICURespiratoryTractCheckUp1, goToPositioning } = useRoutes();
 
   const renderImages = imagesOptions.map((option) => (
     <ImageWithLabelAndCaptionOption
@@ -41,7 +41,7 @@ export const ICURespiratoryTractCheckUp2: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToICURespiratoryTractCheckUp1} label="Voltar" />
 
-        <Button onClick={() => {}} label="Próximo" />
+        <Button onClick={goToPositioning} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
