@@ -12,10 +12,12 @@ interface OptionProps {
   option: Option;
   value?: string;
   size?: number;
+  width?: string;
 }
 
 export const ImageWithLabelAndCaptionOption: React.FC<OptionProps> = ({
   withCheckedText = true,
+  width = "w-[12rem]",
   size = 100,
   onChange,
   option,
@@ -27,7 +29,7 @@ export const ImageWithLabelAndCaptionOption: React.FC<OptionProps> = ({
 
   return (
     <div
-      className="flex flex-col items-center justify-start cursor-pointer w-[12rem]"
+      className={`flex flex-col items-center justify-start cursor-pointer ${width}`}
       onClick={() => onChange?.(label)}
     >
       <span className="flex items-center justify-start gap-[1rem]">
