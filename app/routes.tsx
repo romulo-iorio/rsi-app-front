@@ -1,6 +1,6 @@
 import * as Pages from "./pages";
 
-interface RouteProps {
+export interface RouteProps {
   Component: React.PropsWithChildren<any>;
   routerName: string;
   indexName?: string;
