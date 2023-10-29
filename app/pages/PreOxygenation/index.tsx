@@ -2,12 +2,12 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const PreOxygenation: React.FC = () => {
-  const { goToPositioning, goToRapidSequenceInduction } = useRoutes();
+  const { goToPositioning, goToRapidSequenceInductionTips } = useRoutes();
 
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0.5rem]">
-        <video autoPlay controls className="!w-full !h-full">
+        <video className="!w-full !h-full" autoPlay controls>
           <source src="/pre-oxygenation.mp4" type="video/mp4" />
         </video>
       </BaseLayout.Content>
@@ -15,7 +15,7 @@ export const PreOxygenation: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToPositioning} label="Voltar" />
 
-        <Button onClick={goToRapidSequenceInduction} label="Próximo" />
+        <Button onClick={goToRapidSequenceInductionTips} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
