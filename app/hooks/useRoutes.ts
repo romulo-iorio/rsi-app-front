@@ -1,29 +1,34 @@
 import { useNavigate } from "react-router";
+import pages from "../routes";
 
-export const useRoutes = () => {
+interface Return {
+  goToForgotPassword: () => void;
+  goToNewPassword: () => void;
+  goToRegister: () => void;
+  goToLogin: () => void;
+  goToPatientType: () => void;
+  goToNotICURespiratoryTractCheckUp1: () => void;
+  goToNotICURespiratoryTractCheckUp2: () => void;
+  goToICURespiratoryTractCheckUp1: () => void;
+  goToICURespiratoryTractCheckUp2: () => void;
+  goToPositioning: () => void;
+  goToPreOxygenation: () => void;
+  goToRapidSequenceInduction: () => void;
+  goToAwakeIntubation: () => void;
+  goToInternationalRecommendations: () => void;
+  goToVortexScheme: () => void;
+  goToFlowChartGeneralVision: () => void;
+}
+
+export const useRoutes = (): Return => {
   const navigate = useNavigate();
 
-  return {
-    goToForgotPassword: () => navigate("/forgot-password"),
-    goToNewPassword: () => navigate("/new-password"),
-    goToRegister: () => navigate("/register"),
-    goToLogin: () => navigate("/"),
-    goToPatientType: () => navigate("/patient-type"),
-    goToNotICURespiratoryTractCheckUp1: () =>
-      navigate("/not-icu-respiratory-tract-check-up-1"),
-    goToNotICURespiratoryTractCheckUp2: () =>
-      navigate("/not-icu-respiratory-tract-check-up-2"),
-    goToICURespiratoryTractCheckUp1: () =>
-      navigate("/icu-respiratory-tract-check-up-1"),
-    goToICURespiratoryTractCheckUp2: () =>
-      navigate("/icu-respiratory-tract-check-up-2"),
-    goToPositioning: () => navigate("/positioning"),
-    goToPreOxygenation: () => navigate("/pre-oxygenation"),
-    goToRapidSequenceInduction: () => navigate("/rapid-sequence-induction"),
-    goToAwakeIntubation: () => navigate("/awake-intubation"),
-    goToInternationalRecommendations: () =>
-      navigate("/international-recommendations"),
-    goToVortexScheme: () => navigate("/vortex-scheme"),
-    goToFlowChartGeneralVision: () => navigate("/flow-chart-general-vision"),
-  };
+  return pages.reduce((routes: Return, page) => {
+    const { path } = page;
+    const routerName = page.routerName as keyof Return;
+
+    routes[routerName] = () => navigate(path);
+
+    return routes;
+  }, {} as Return);
 };
