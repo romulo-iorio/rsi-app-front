@@ -9,7 +9,7 @@ export * from "./ICURespiratoryTractCheckUp1";
 export * from "./ICURespiratoryTractCheckUp2";
 export * from "./Positioning";
 export * from "./PreOxygenation";
-export * from "./RapidSequenceInduction";
+export * from "./RapidSequenceInductionTips";
 export * from "./AwakeIntubation";
 export * from "./InternationalRecommendations";
 export * from "./VortexScheme";

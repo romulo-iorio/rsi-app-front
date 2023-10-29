@@ -1,7 +1,7 @@
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-export const RapidSequenceInduction: React.FC = () => {
+export const RapidSequenceInductionTips: React.FC = () => {
   const { goToPreOxygenation, goToAwakeIntubation } = useRoutes();
 
   return (
