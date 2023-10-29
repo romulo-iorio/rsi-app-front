@@ -50,7 +50,7 @@ export const Clipboard = ({ children }: Props) => {
           />
         </div>
 
-        <p className="text-[1.25rem] font-bold uppercase text-[#01584B]">
+        <p className="text-[1.125rem] font-bold uppercase text-[#01584B]">
           {title.toUpperCase()}
         </p>
       </div>
