@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import pages from "../routes";
 
 interface Return {
+  goBack: () => void;
   goToForgotPassword: () => void;
   goToNewPassword: () => void;
   goToRegister: () => void;
@@ -13,17 +14,24 @@ interface Return {
   goToICURespiratoryTractCheckUp2: () => void;
   goToPositioning: () => void;
   goToPreOxygenation: () => void;
-  goToRapidSequenceInduction: () => void;
-  goToAwakeIntubation: () => void;
+  goToRapidSequenceInductionTips: () => void;
   goToInternationalRecommendations: () => void;
   goToVortexScheme: () => void;
   goToFlowChartGeneralVision: () => void;
+  goToDifficultIntubation: () => void;
+  goToDifficultVentilation: () => void;
+  goToRapidSequenceInduction: () => void;
+  goToAwakeIntubation: () => void;
+  goToAfterAnesthesicInduction: () => void;
+  goToLaryngealMask: () => void;
+  goToCervicalAccess: () => void;
+  goToWhatAboutAnesthetists: () => void;
 }
 
 export const useRoutes = (): Return => {
   const navigate = useNavigate();
 
-  return pages.reduce((routes: Return, page) => {
+  const routes = pages.reduce((routes: Return, page) => {
     const { path } = page;
     const routerName = page.routerName as keyof Return;
 
@@ -31,4 +39,8 @@ export const useRoutes = (): Return => {
 
     return routes;
   }, {} as Return);
+
+  routes.goBack = () => navigate(-1);
+
+  return routes;
 };
