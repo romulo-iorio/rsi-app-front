@@ -26,11 +26,11 @@ export const RadioWithLabelImageAndCaption: React.FC<Props> = ({
   ));
 
   return (
-    <div className="text-black text-[1.5rem] w-full relative">
+    <div className="text-black text-[1rem] lg:text-[1.5rem] h-full w-full relative">
       <b className="ml-[1rem]">{label}</b>
 
       <div
-        className="flex flex-wrap justify-center gap-[2rem]"
+        className="flex flex-wrap justify-center gap-[1rem] lg:gap-[2rem] overflow-y-auto"
         style={{ rowGap: "0.5rem" }}
       >
         {renderOptions}
