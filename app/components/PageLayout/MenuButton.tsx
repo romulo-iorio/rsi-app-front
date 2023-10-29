@@ -20,7 +20,7 @@ export const MenuButton: React.FC = () => {
 
   return (
     <div
-      className="absolute top-[1.25rem] left-[1.25rem] cursor-pointer p-2 bg-[#90C7BE] hover:bg-[#62C8B8] rounded-md transition-all active:translate-y-1"
+      className="absolute top-[3rem] md:lg:top-[1.25rem] left-[1.25rem] cursor-pointer p-2 bg-[#90C7BE] hover:bg-[#62C8B8] rounded-md transition-all active:translate-y-1"
       onClick={onClick}
     >
       <Icon className="text-black text-[1.5rem]" />
