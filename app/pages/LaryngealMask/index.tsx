@@ -2,7 +2,7 @@ import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const optionsButtonsClassName =
-  "!lg:w-[22rem] !lg:h-[7rem] w-[13rem] h-[5rem] !lg:text-[1.25rem] text-[0.75rem]";
+  "!md:lg:w-[24rem] !md:lg:h-[8rem] !w-[13rem] !h-[5rem] !text-[0.75rem]";
 
 export const LaryngealMask: React.FC = () => {
   const { goBack, goToCervicalAccess } = useRoutes();
@@ -10,7 +10,7 @@ export const LaryngealMask: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[75%]">
-        <p className="text-[1rem] lg:text-[1.5rem] lg:px-0 px-5">
+        <p className="text-[1rem] lg:px-0 px-5">
           3 tentativas com modelos/tamanhos diferentes​
         </p>
 

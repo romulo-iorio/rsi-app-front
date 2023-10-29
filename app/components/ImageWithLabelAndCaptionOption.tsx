@@ -41,7 +41,7 @@ export const ImageWithLabelAndCaptionOption: React.FC<OptionProps> = ({
       <Image src={imageSrc} alt={label + caption} width={size} height={size} />
 
       {caption ? (
-        <p className="text-center text-[0.875rem] text-[#666]">{caption}</p>
+        <p className="text-center text-[0.75rem] text-[#666]">{caption}</p>
       ) : null}
     </div>
   );

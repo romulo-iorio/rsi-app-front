@@ -34,8 +34,8 @@ export const Menu: React.FC = () => {
     <div
       className={`
         ${clipBoardStyling.className} ${zIndexClassName}
-        !w-full md:lg:!w-[25rem] h-[38rem] md:!h-[42rem] !lg:h-[45rem] !absolute
-        lg:top-[2.5rem] md:top-[4rem] top-[6rem]
+        !w-full md:lg:!w-[25rem] h-[38rem] md:!h-[36rem] !lg:h-[30rem] !absolute
+        lg:top-[2.5rem] md:top-[6rem] top-[6rem]
         lg:-left-[20rem] left-[0]
         ${menuOpenClassName} transition-all duration-500
         py-[1rem] pl-[1rem] ${paddingRightClassName}

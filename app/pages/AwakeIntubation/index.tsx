@@ -23,7 +23,7 @@ export const AwakeIntubation: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[90%] !lg:h-[80%] !pt-[0rem] !lg:pt-[1rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black text-[0.875rem] lg:text-[1.125rem] items-center justify-center px-5 lg:px-0">
+        <div className="flex flex-row h-full w-full text-black text-[0.875rem] items-center justify-center px-5 lg:px-2">
           <ol className="flex flex-col w-full h-full justify-center gap-[1rem] list-decimal">
             {renderListItems}
           </ol>

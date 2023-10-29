@@ -6,7 +6,7 @@ export const PreOxygenation: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0.5rem]">
+      <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0rem]">
         <video className="!w-full !h-full" autoPlay controls>
           <source src="/pre-oxygenation.mp4" type="video/mp4" />
         </video>

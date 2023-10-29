@@ -9,7 +9,7 @@ export const AfterAnesthesicInduction: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[75%]">
-        <p className="text-[1rem] lg:text-[1.5rem] lg:px-0 px-5">
+        <p className="text-[1rem] lg:px-0 px-5">
           Intubação traqueal – máximo 3 tentativas (videolaringoscópio,
           laringoscópio tradicional, MacCoy). Capnógrafo disponível?​
         </p>

@@ -22,7 +22,7 @@ export const MenuIndexItem: React.FC<Props> = ({ page }) => {
 
   return (
     <li
-      className="text-[1rem] cursor-pointer hover:text-[#01967F] transition-all underline"
+      className="text-[1rem] lg:text-[0.875rem] cursor-pointer hover:text-[#01967F] transition-all underline"
       onClick={onClick}
     >
       {indexName ?? name}

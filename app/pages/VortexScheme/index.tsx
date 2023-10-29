@@ -10,7 +10,7 @@ export const VortexScheme: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!justify-around !h-[80%] !pt-[3rem] !pb-[3rem] !px-[0.5rem] relative">
+      <BaseLayout.Content className="!justify-around !h-[80%] !px-[0.5rem] relative">
         <div className="flex flex-col w-full h-full items-center justify-center">
           <Image
             src="/vortex-scheme.png"
@@ -20,16 +20,18 @@ export const VortexScheme: React.FC = () => {
           />
         </div>
 
-        <p className={`${commonTextClassName} top-5`}>Máscara facial</p>
+        <p className={`${commonTextClassName} top-10 lg:top-0`}>
+          Máscara facial
+        </p>
 
         <p
-          className={`${commonTextClassName} bottom-[8.5rem] lg:bottom-[8rem] left-0 md:left-[5%] lg:left-[9rem] lg:rotate-[55deg]  rotate-[60deg]`}
+          className={`${commonTextClassName} bottom-[8.5rem] lg:bottom-[5rem] left-0 md:left-[5%] lg:rotate-[55deg]  rotate-[60deg]`}
         >
           Máscara laríngea
         </p>
 
         <p
-          className={`${commonTextClassName} bottom-[8.5rem] lg:bottom-[8rem] right-0 md:right-[5%] lg:right-[9rem] -lg:rotate-[55deg] -rotate-[60deg]`}
+          className={`${commonTextClassName} bottom-[8.5rem] lg:bottom-[5rem] right-0 md:right-[5%] -lg:rotate-[55deg] -rotate-[60deg]`}
         >
           Tubo traqueal
         </p>

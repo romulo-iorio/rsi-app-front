@@ -37,7 +37,7 @@ export const RadioWithLabel: React.FC<Props> = ({
   ));
 
   return (
-    <div className="text-black text-[1rem] lg:text-[1.5rem] w-full relative">
+    <div className="text-black text-[1rem] lg:text-[1rem] w-full relative">
       <b className="ml-[1rem]">{label}</b>
 
       <div className="flex items-center justify-around w-full gap-[1rem] mt-[1rem]">

@@ -17,7 +17,7 @@ export const PageLayout: React.FC<Props> = ({ title, children }) => (
   <PageContextProvider title={title}>
     <Background>
       <div className="flex w-screen h-screen justify-center items-center">
-        <div className="flex flex-col justify-start items-center relative w-full lg:w-[50rem] md:lg:h-[50rem] h-[80%]">
+        <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] h-[80%]">
           <Menu />
 
           <Clipboard>
@@ -25,7 +25,7 @@ export const PageLayout: React.FC<Props> = ({ title, children }) => (
 
             <LogoOnClipboard />
 
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-[10rem] w-full h-[80%] overflow-y-auto overflow-x-hidden z-[3]">
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-[8rem] w-full h-[80%] overflow-y-auto overflow-x-hidden z-[3]">
               {children}
             </div>
           </Clipboard>

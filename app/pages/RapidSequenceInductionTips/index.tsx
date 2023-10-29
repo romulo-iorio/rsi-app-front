@@ -7,7 +7,7 @@ export const RapidSequenceInductionTips: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[0rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black text-[0.9rem] md:text-[1rem] lg:text-[1.25rem] items-center justify-center">
+        <div className="flex flex-row h-full w-full text-black text-[0.9rem] md:text-[1rem] lg:text-[1rem] items-center justify-center">
           <div className="flex flex-col w-1/2 h-full justify-center gap-[2rem]">
             <span>
               <b>Doses para pacientes com 70kg:</b>
@@ -25,7 +25,7 @@ export const RapidSequenceInductionTips: React.FC = () => {
           </div>
 
           <div className="flex flex-col w-1/2 h-full justify-center">
-            <div className="flex flex-col w-fit h-fit justify-center gap-[2rem] bg-red-300 rounded-3xl p-4 lg:p-8">
+            <div className="flex flex-col w-fit h-fit justify-center gap-[2rem] bg-red-300 rounded-3xl p-4 lg:p-5">
               <span>
                 <b>Atenção:</b>
                 <p>
