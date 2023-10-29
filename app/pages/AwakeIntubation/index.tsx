@@ -12,7 +12,8 @@ const listItems: string[] = [
 ];
 
 export const AwakeIntubation: React.FC = () => {
-  const { goToRapidSequenceInduction } = useRoutes();
+  const { goToRapidSequenceInduction, goToInternationalRecommendations } =
+    useRoutes();
 
   const renderListItems = listItems.map((item, index) => (
     <li key={index} className="text-black">
@@ -33,7 +34,7 @@ export const AwakeIntubation: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToRapidSequenceInduction} label="Voltar" />
 
-        <Button onClick={() => {}} label="Próximo" />
+        <Button onClick={goToInternationalRecommendations} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
