@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 interface Return {
   isMediumOrSmaller: boolean;
+  isSmall: boolean;
   height: number;
   width: number;
 }
@@ -27,5 +28,6 @@ export const useWindowSize = (): Return => {
   return {
     ...windowSize,
     isMediumOrSmaller: windowSize.width <= 768,
+    isSmall: windowSize.width <= 576,
   };
 };
