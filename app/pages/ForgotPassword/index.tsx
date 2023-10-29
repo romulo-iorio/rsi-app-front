@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import {
   BaseContentContainer,
   BaseButtonsContainer,
@@ -9,10 +11,17 @@ import { useRoutes } from "@/app/hooks";
 export const ForgotPassword: React.FC = () => {
   const { goToLogin, goToPatientType } = useRoutes();
 
+  const [email, setEmail] = useState<string>("");
+
   return (
     <>
       <BaseContentContainer>
-        <InputWithLabel label="E-mail" placeholder="Preencha seu e-mail" />
+        <InputWithLabel
+          placeholder="Preencha seu e-mail"
+          onChange={setEmail}
+          label="E-mail"
+          value={email}
+        />
       </BaseContentContainer>
 
       <BaseButtonsContainer>
