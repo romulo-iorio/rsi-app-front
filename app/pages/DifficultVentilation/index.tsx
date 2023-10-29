@@ -15,7 +15,7 @@ export const DifficultVentilation: React.FC = () => {
       <BaseLayout.Content className="!justify-around !h-[75%]">
         <FlowChartQuestion question="Ventilação difícil?" />
 
-        <div className="flex flex-row justify-center items-center gap-[3rem]">
+        <div className="flex flex-row justify-center items-center gap-[2rem] lg:gap-[3rem]">
           <Button
             className={flowChartOptionsButtonsClassName}
             onClick={goToAwakeIntubation}
