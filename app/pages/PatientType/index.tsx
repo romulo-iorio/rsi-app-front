@@ -2,7 +2,7 @@ import { BaseLayout, Button } from "@/app/components";
 import { PatientTypeEnum, usePageContext } from "@/app/store";
 import { useRoutes } from "@/app/hooks";
 
-const buttonsClassName = "!w-[20rem] !h-[7rem] !font-[2rem]";
+const buttonsClassName = "!w-[20rem] !h-[7rem]";
 
 export const PatientType: React.FC = () => {
   const {
