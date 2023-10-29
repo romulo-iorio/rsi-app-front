@@ -15,7 +15,7 @@ const tableData = [
   { parameter: "O: Abertura de boca menor que  cm", score: "1" },
   { parameter: "C: Coma", score: "1" },
   { parameter: "H: Hipóxia severa (80%)", score: "1" },
-  { parameter: "A: Sem anestesista", score: "1" },
+  { parameter: "A: Não-anestesista", score: "1" },
 ];
 
 export const ICURespiratoryTractCheckUp1: React.FC = () => {
