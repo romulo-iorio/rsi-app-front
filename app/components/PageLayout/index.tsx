@@ -17,7 +17,7 @@ export const PageLayout: React.FC<Props> = ({ title, children }) => (
   <PageContextProvider title={title}>
     <Background>
       <div className="flex w-screen h-screen justify-center items-center">
-        <div className="flex flex-col justify-start items-center relative w-[50rem] h-[50rem]">
+        <div className="flex flex-col justify-start items-center relative w-full lg:w-[50rem] md:lg:h-[50rem] h-[80%]">
           <Menu />
 
           <Clipboard>
