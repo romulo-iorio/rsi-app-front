@@ -57,6 +57,11 @@ const pages: RouteProps[] = [
     name: "Posicionamento",
     path: "/positioning",
   },
+  {
+    Component: Pages.PreOxygenation,
+    name: "Pré-oxigenação",
+    path: "/pre-oxygenation",
+  },
 ];
 
 export default pages;
