@@ -23,13 +23,13 @@ export const VortexScheme: React.FC = () => {
         <p className={`${commonTextClassName} top-5`}>Máscara facial</p>
 
         <p
-          className={`${commonTextClassName} bottom-[8rem] left-[9rem] rotate-[55deg]`}
+          className={`${commonTextClassName} bottom-[8.5rem] lg:bottom-[8rem] left-0 md:left-[5%] lg:left-[9rem] lg:rotate-[55deg]  rotate-[60deg]`}
         >
           Máscara laríngea
         </p>
 
         <p
-          className={`${commonTextClassName} bottom-[8rem] right-[9rem] -rotate-[55deg]`}
+          className={`${commonTextClassName} bottom-[8.5rem] lg:bottom-[8rem] right-0 md:right-[5%] lg:right-[9rem] -lg:rotate-[55deg] -rotate-[60deg]`}
         >
           Tubo traqueal
         </p>
