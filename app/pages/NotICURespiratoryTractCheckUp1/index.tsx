@@ -14,7 +14,7 @@ export const NotICURespiratoryTractCheckUp1: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-auto pb-[2rem]">
+      <BaseLayout.Content className="!h-[90%] lg:!h-[75%] overflow-x-hidden overflow-y-auto lg:overflow-hidden lg:hover:overflow-y-auto !pt-[1rem] !lg:pt-[3rem] pb-[1rem] lg:pb-[2rem]">
         <RadioWithLabel
           label="Histórico de intubação difícil"
           options={["Sim", "Não"]}
