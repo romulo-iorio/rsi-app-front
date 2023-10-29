@@ -3,7 +3,7 @@ import { useRoutes } from "@/app/hooks";
 import Image from "next/image";
 
 export const FlowChartGeneralVision: React.FC = () => {
-  const { goToInternationalRecommendations } = useRoutes();
+  const { goToVortexScheme } = useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -17,7 +17,7 @@ export const FlowChartGeneralVision: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToInternationalRecommendations} label="Voltar" />
+        <Button onClick={goToVortexScheme} label="Voltar" />
 
         <Button onClick={() => {}} label="Próximo" />
       </BaseLayout.Buttons>
