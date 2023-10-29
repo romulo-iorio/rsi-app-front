@@ -31,7 +31,7 @@ export const ICURespiratoryTractCheckUp2: React.FC = () => {
     <BaseLayout.Root>
       <BaseLayout.Content className="!h-[75%] overflow-x-hidden overflow-y-hidden pb-[2rem] !gap-[1rem] !pt-[1rem]">
         <div
-          className="flex flex-wrap items-start justify-center text-black text-[1.125rem] gap-[2rem]"
+          className="flex flex-wrap items-start justify-center text-black text-[1.125rem] gap-[1rem] lg:gap-[2rem]"
           style={{ rowGap: "0.5rem" }}
         >
           {renderImages}
