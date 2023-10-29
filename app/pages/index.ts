@@ -11,3 +11,4 @@ export * from "./Positioning";
 export * from "./PreOxygenation";
 export * from "./RapidSequenceInduction";
 export * from "./AwakeIntubation";
+export * from "./InternationalRecommendations";

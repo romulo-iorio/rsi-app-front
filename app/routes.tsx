@@ -87,6 +87,12 @@ const pages: RouteProps[] = [
     path: "/awake-intubation",
     indexed: true,
   },
+  {
+    Component: Pages.InternationalRecommendations,
+    name: "Recomendações internacionais",
+    path: "/international-recommendations",
+    indexed: true,
+  },
 ];
 
 export default pages;

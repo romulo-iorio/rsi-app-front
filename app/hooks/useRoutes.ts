@@ -21,5 +21,7 @@ export const useRoutes = () => {
     goToPreOxygenation: () => navigate("/pre-oxygenation"),
     goToRapidSequenceInduction: () => navigate("/rapid-sequence-induction"),
     goToAwakeIntubation: () => navigate("/awake-intubation"),
+    goToInternationalRecommendations: () =>
+      navigate("/international-recommendations"),
   };
 };
