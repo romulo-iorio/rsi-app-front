@@ -12,8 +12,7 @@ const listItems: string[] = [
 ];
 
 export const AwakeIntubation: React.FC = () => {
-  const { goToRapidSequenceInduction, goToInternationalRecommendations } =
-    useRoutes();
+  const { goBack, goToAfterAnesthesicInduction } = useRoutes();
 
   const renderListItems = listItems.map((item, index) => (
     <li key={index} className="text-black">
@@ -24,7 +23,7 @@ export const AwakeIntubation: React.FC = () => {
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[80%] !pt-[1rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black font-[1.5rem] items-center justify-center">
+        <div className="flex flex-row h-full w-full text-black text-[1.125rem] items-center justify-center">
           <ol className="flex flex-col w-full h-full justify-center gap-[1rem] list-decimal">
             {renderListItems}
           </ol>
@@ -32,9 +31,9 @@ export const AwakeIntubation: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToRapidSequenceInduction} label="Voltar" />
+        <Button onClick={goBack} label="Voltar" />
 
-        <Button onClick={goToInternationalRecommendations} label="Próximo" />
+        <Button onClick={goToAfterAnesthesicInduction} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
