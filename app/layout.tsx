@@ -5,8 +5,9 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "RSI App",
-  description: "Rápida Sequência de Intubação",
+  title: "RSI app - Manejo de vias aéreas",
+  description:
+    "Aplicativo para auxiliar em manejo de vias aéreas com Rápida Sequência de Intubação",
 };
 
 interface Props {
