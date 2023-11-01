@@ -9,7 +9,7 @@ import {
 import { useRoutes } from "@/app/hooks";
 
 export const Register: React.FC = () => {
-  const { goToLogin, goToPatientType } = useRoutes();
+  const { goToLogin, goToRespiratoryTractCheckUp } = useRoutes();
 
   const [email, setEmail] = useState<string>("");
   const [name, setName] = useState<string>("");
@@ -69,7 +69,7 @@ export const Register: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToLogin} label="Voltar" />
 
-        <Button onClick={goToPatientType} label="Entrar" />
+        <Button onClick={goToRespiratoryTractCheckUp} label="Entrar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
