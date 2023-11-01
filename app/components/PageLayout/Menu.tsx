@@ -48,9 +48,9 @@ export const Menu: React.FC = () => {
         Índice
       </b>
 
-      <ul className="flex flex-col justify-start items-start w-full h-full gap-[0.5rem] overflow-y-auto lg:overflow-hidden lg:hover:overflow-y-auto list-inside list-disc">
+      <ol className="flex flex-col justify-start items-start w-full h-full gap-[0.5rem] overflow-y-auto lg:overflow-hidden lg:hover:overflow-y-auto list-inside list-decimal">
         {renderIndexItems}
-      </ul>
+      </ol>
     </div>
   );
 };
