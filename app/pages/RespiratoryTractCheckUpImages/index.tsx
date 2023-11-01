@@ -15,8 +15,11 @@ const imagesOptions: Option[] = [
   { imageSrc: "/abertura de boca ruim.png", label: "Abertura de boca ruim" },
 ];
 
-export const ICURespiratoryTractCheckUp2: React.FC = () => {
-  const { goToICURespiratoryTractCheckUp1, goToPositioning } = useRoutes();
+export const RespiratoryTractCheckUpImages: React.FC = () => {
+  const {
+    goToRespiratoryTractCheckUpMallampati,
+    goToRespiratoryTractCheckUpMacocha,
+  } = useRoutes();
 
   const renderImages = imagesOptions.map((option) => (
     <ImageWithLabelAndCaptionOption
@@ -39,9 +42,12 @@ export const ICURespiratoryTractCheckUp2: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToICURespiratoryTractCheckUp1} label="Voltar" />
+        <Button
+          onClick={goToRespiratoryTractCheckUpMallampati}
+          label="Voltar"
+        />
 
-        <Button onClick={goToPositioning} label="Próximo" />
+        <Button onClick={goToRespiratoryTractCheckUpMacocha} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
