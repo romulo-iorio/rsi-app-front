@@ -7,8 +7,9 @@ import {
 } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-export const NotICURespiratoryTractCheckUp2: React.FC = () => {
-  const { goToNotICURespiratoryTractCheckUp1, goToPositioning } = useRoutes();
+export const RespiratoryTractCheckUpMallampati: React.FC = () => {
+  const { goToRespiratoryTractCheckUp, goToRespiratoryTractCheckUpImages } =
+    useRoutes();
 
   const [mallampati, setMallampati] = useState("");
 
@@ -45,9 +46,9 @@ export const NotICURespiratoryTractCheckUp2: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToNotICURespiratoryTractCheckUp1} label="Voltar" />
+        <Button onClick={goToRespiratoryTractCheckUp} label="Voltar" />
 
-        <Button onClick={goToPositioning} label="Próximo" />
+        <Button onClick={goToRespiratoryTractCheckUpImages} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
