@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
@@ -5,6 +7,10 @@ import { flowChartOptionsButtonsClassName } from "..";
 
 export const AfterAnesthesicInduction: React.FC = () => {
   const { goBack, goToLaryngealMask } = useRoutes();
+
+  const onClick = () => {
+    toast.success("Respirador");
+  };
 
   return (
     <BaseLayout.Root>
@@ -19,7 +25,7 @@ export const AfterAnesthesicInduction: React.FC = () => {
         <div className="flex flex-row justify-center items-center gap-[1rem] lg:gap-[3rem]">
           <Button
             className={flowChartOptionsButtonsClassName}
-            onClick={() => alert("Respirador")} // TODO: Understand and implement this part
+            onClick={onClick}
             label="Sim"
           />
 
