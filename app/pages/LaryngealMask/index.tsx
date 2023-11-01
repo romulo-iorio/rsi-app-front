@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
@@ -19,7 +21,9 @@ export const LaryngealMask: React.FC = () => {
         <div className="flex flex-row justify-center items-center gap-[0.5rem] lg:gap-[3rem]">
           <Button
             className={optionsButtonsClassName}
-            onClick={() => alert("Parar e pensar")} // TODO: Understand and implement this part
+            onClick={() => {
+              toast.success("Parar e pensar");
+            }}
             label="Sucesso ou insucesso com boa ventilação por máscara"
           />
 
