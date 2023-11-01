@@ -3,8 +3,8 @@ import { useState } from "react";
 import { RadioWithLabel, BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-export const NotICURespiratoryTractCheckUp1: React.FC = () => {
-  const { goToPatientType, goToNotICURespiratoryTractCheckUp2 } = useRoutes();
+export const RespiratoryTractCheckUp: React.FC = () => {
+  const { goToLogin, goToRespiratoryTractCheckUpMallampati } = useRoutes();
 
   const [hardIntubation, setHardIntubation] = useState("");
   const [apnea, setApnea] = useState("");
@@ -52,9 +52,12 @@ export const NotICURespiratoryTractCheckUp1: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToPatientType} label="Voltar" />
+        <Button onClick={goToLogin} label="Voltar" />
 
-        <Button onClick={goToNotICURespiratoryTractCheckUp2} label="Próximo" />
+        <Button
+          onClick={goToRespiratoryTractCheckUpMallampati}
+          label="Próximo"
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
