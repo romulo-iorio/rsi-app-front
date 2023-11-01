@@ -7,9 +7,9 @@ interface Props {
 
 export const TableRow: React.FC<Props> = ({
   parameter,
+  centered,
   score,
   Input,
-  centered,
 }) => {
   const [identifier, rest] = parameter.split(":");
 
