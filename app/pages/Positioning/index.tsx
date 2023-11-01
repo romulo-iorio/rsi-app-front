@@ -24,16 +24,10 @@ const imagesOptions: Option[] = [
 
 export const Positioning: React.FC = () => {
   const {
-    goToNotICURespiratoryTractCheckUp2,
-    goToICURespiratoryTractCheckUp2,
-    goToPreOxygenation,
+    goToRespiratoryTractCheckUpMacocha,
+    goToInternationalRecommendations,
   } = useRoutes();
   const { patientType } = usePageContext();
-
-  const goBack =
-    patientType === PatientTypeEnum.ICU
-      ? goToICURespiratoryTractCheckUp2
-      : goToNotICURespiratoryTractCheckUp2;
 
   const renderImages = imagesOptions.map((option) => (
     <ImageWithLabelAndCaptionOption
@@ -54,9 +48,9 @@ export const Positioning: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goBack} label="Voltar" />
+        <Button onClick={goToRespiratoryTractCheckUpMacocha} label="Voltar" />
 
-        <Button onClick={goToPreOxygenation} label="Próximo" />
+        <Button onClick={goToInternationalRecommendations} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
