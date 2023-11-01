@@ -2,6 +2,7 @@
   "name": "rsi-app-front",
   "version": "0.1.0",
   "private": true,
+  "author": "Rômulo Iorio <romuloiorio@hotmail.com> - https://github.com/romulo-iorio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
