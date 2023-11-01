@@ -9,7 +9,7 @@ import {
 import { useRoutes } from "@/app/hooks";
 
 export const ForgotPassword: React.FC = () => {
-  const { goToLogin, goToPatientType } = useRoutes();
+  const { goToLogin } = useRoutes();
 
   const [email, setEmail] = useState<string>("");
 
@@ -27,7 +27,7 @@ export const ForgotPassword: React.FC = () => {
       <BaseButtonsContainer>
         <Button label="Voltar" onClick={goToLogin} />
 
-        <Button label="Enviar" onClick={goToPatientType} />
+        <Button label="Enviar" onClick={goToLogin} />
       </BaseButtonsContainer>
     </>
   );
