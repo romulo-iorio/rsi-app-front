@@ -7,13 +7,20 @@ const listItems: string[] = [
 ];
 
 export const CervicalAccess: React.FC = () => {
-  const { goBack, goToWhatAboutAnesthetists } = useRoutes();
+  const { goBack, goToRapidSequenceInductionTips } = useRoutes();
 
   const renderListItems = listItems.map((item, index) => (
     <li key={index} className="text-black">
       {item}
     </li>
   ));
+
+  // const onClickOnVideo = () => {
+  //   window.open(
+  //     "https://www.youtube.com/watch?v=B8I1t1HlUac&ab_channel=DifficultAirwaySociety",
+  //     "_blank"
+  //   );
+  // };
 
   return (
     <BaseLayout.Root>
@@ -33,12 +40,14 @@ export const CervicalAccess: React.FC = () => {
             </li>
           </ul>
         </div>
+
+        {/* <Button onClick={onClickOnVideo} label="Veja o vídeo" /> */}
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
         <Button onClick={goBack} label="Voltar" />
 
-        <Button onClick={goToWhatAboutAnesthetists} label="Próximo" />
+        <Button onClick={goToRapidSequenceInductionTips} label="Próximo" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
