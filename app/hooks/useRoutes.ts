@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router";
+
+import { usePageContext } from "../store";
 import pages from "../routes";
 
 interface Return {
@@ -6,18 +8,15 @@ interface Return {
   goToForgotPassword: () => void;
   goToNewPassword: () => void;
   goToRegister: () => void;
+  goToCover: () => void;
   goToLogin: () => void;
-  goToPatientType: () => void;
-  goToNotICURespiratoryTractCheckUp1: () => void;
-  goToNotICURespiratoryTractCheckUp2: () => void;
-  goToICURespiratoryTractCheckUp1: () => void;
-  goToICURespiratoryTractCheckUp2: () => void;
-  goToPositioning: () => void;
-  goToPreOxygenation: () => void;
-  goToRapidSequenceInductionTips: () => void;
+  goToRespiratoryTractCheckUp: () => void;
+  goToRespiratoryTractCheckUpMallampati: () => void;
+  goToRespiratoryTractCheckUpImages: () => void;
+  goToRespiratoryTractCheckUpMacocha: () => void;
   goToInternationalRecommendations: () => void;
+  goToPositioning: () => void;
   goToVortexScheme: () => void;
-  goToFlowChartGeneralVision: () => void;
   goToDifficultIntubation: () => void;
   goToDifficultVentilation: () => void;
   goToRapidSequenceInduction: () => void;
@@ -25,22 +24,29 @@ interface Return {
   goToAfterAnesthesicInduction: () => void;
   goToLaryngealMask: () => void;
   goToCervicalAccess: () => void;
+  goToRapidSequenceInductionTips: () => void;
+  goToFlowChartGeneralVision: () => void;
+  goToSummaryVideo: () => void;
   goToWhatAboutAnesthetists: () => void;
 }
 
 export const useRoutes = (): Return => {
+  const { setLastPage, lastPage } = usePageContext();
   const navigate = useNavigate();
 
   const routes = pages.reduce((routes: Return, page) => {
     const { path } = page;
     const routerName = page.routerName as keyof Return;
 
-    routes[routerName] = () => navigate(path);
+    routes[routerName] = () => {
+      setLastPage(window.location.pathname);
+      navigate(path);
+    };
 
     return routes;
   }, {} as Return);
 
-  routes.goBack = () => navigate(-1);
+  routes.goBack = () => navigate(lastPage);
 
   return routes;
 };
