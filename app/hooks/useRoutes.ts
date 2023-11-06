@@ -7,7 +7,7 @@ interface Return {
   goBack: () => void;
   goToForgotPassword: () => void;
   goToNewPassword: () => void;
-  goToRegister: () => void;
+  goToRegistration: () => void;
   goToCover: () => void;
   goToLogin: () => void;
   goToRespiratoryTractCheckUp: () => void;

@@ -26,10 +26,10 @@ const pages: RouteProps[] = [
     isPrivate: false,
   },
   {
-    Component: Pages.Register,
+    Component: Pages.Registration,
     name: "Cadastro",
-    path: "/register",
-    routerName: "goToRegister",
+    path: "/registration",
+    routerName: "goToRegistration",
     isPrivate: false,
   },
   {

@@ -8,7 +8,7 @@ import {
 } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-export const Register: React.FC = () => {
+export const Registration: React.FC = () => {
   const { goToLogin, goToRespiratoryTractCheckUp } = useRoutes();
 
   const [email, setEmail] = useState<string>("");

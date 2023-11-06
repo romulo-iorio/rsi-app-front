@@ -6,7 +6,7 @@ import { useRoutes } from "@/app/hooks";
 import { useLogin } from "./hooks";
 
 export const Login: React.FC = () => {
-  const { goToForgotPassword, goToRegister } = useRoutes();
+  const { goToForgotPassword, goToRegistration } = useRoutes();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -35,7 +35,7 @@ export const Login: React.FC = () => {
       <BaseLayout.Buttons>
         <Button onClick={goToForgotPassword} label="Recuperar senha" />
 
-        <Button onClick={goToRegister} label="Cadastro" />
+        <Button onClick={goToRegistration} label="Cadastro" />
 
         <Button onClick={() => login()} label="Entrar" />
       </BaseLayout.Buttons>
