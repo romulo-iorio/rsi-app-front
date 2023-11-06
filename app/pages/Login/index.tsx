@@ -3,12 +3,15 @@ import { useState } from "react";
 import { InputWithLabel, BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
+import { useLogin } from "./hooks";
+
 export const Login: React.FC = () => {
-  const { goToRespiratoryTractCheckUp, goToForgotPassword, goToRegister } =
-    useRoutes();
+  const { goToForgotPassword, goToRegister } = useRoutes();
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+
+  const login = useLogin({ email, password });
 
   return (
     <BaseLayout.Root>
@@ -34,7 +37,7 @@ export const Login: React.FC = () => {
 
         <Button onClick={goToRegister} label="Cadastro" />
 
-        <Button onClick={goToRespiratoryTractCheckUp} label="Entrar" />
+        <Button onClick={() => login()} label="Entrar" />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
