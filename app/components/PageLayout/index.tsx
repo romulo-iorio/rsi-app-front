@@ -7,6 +7,7 @@ import { useRoutes } from "@/app/hooks";
 import PageContextProvider from "@/app/store/PageContext";
 
 import { LogoOnClipboard } from "./LogoOnClipboard";
+import { LogoutButton } from "./LogoutButton";
 import { Background } from "./Background";
 import { MenuButton } from "./MenuButton";
 import { Clipboard } from "./Clipboard";
@@ -18,11 +19,7 @@ interface Props {
   title: string;
 }
 
-const PageLayoutWithoutContext: React.FC<Props> = ({
-  title,
-  children,
-  isPrivate,
-}) => {
+const PageLayoutWithoutContext: React.FC<Props> = ({ isPrivate, children }) => {
   const { goToLogin } = useRoutes();
 
   useEffect(() => {
@@ -42,6 +39,8 @@ const PageLayoutWithoutContext: React.FC<Props> = ({
 
           <Clipboard>
             <MenuButton />
+
+            {isPrivate && <LogoutButton />}
 
             <LogoOnClipboard />
 
