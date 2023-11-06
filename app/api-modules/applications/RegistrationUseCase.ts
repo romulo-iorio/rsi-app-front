@@ -1,14 +1,19 @@
+import type { CryptoService, JwtService, UserRepository } from "../infra";
 import type { RegistrationBody } from "../presentation/validators";
-import type { CryptoService, UserRepository } from "../infra";
 import type { User } from "../domain/entities";
+
+interface Response extends Omit<User, "password" | "cryptographic_salt"> {
+  token: string;
+}
 
 export class RegistrationUseCase {
   constructor(
     private readonly userRepository: UserRepository,
-    private readonly cryptoService: CryptoService
+    private readonly cryptoService: CryptoService,
+    private readonly jwtService: JwtService
   ) {}
 
-  public async execute(input: RegistrationBody): Promise<User> {
+  public async execute(input: RegistrationBody): Promise<Response> {
     const { password: unencryptedPassword, email, name } = input;
 
     const userWithEmailExists = await this.userRepository.findByEmail(email);
@@ -28,7 +33,7 @@ export class RegistrationUseCase {
     );
 
     const intubation_experience =
-      input.intubationExperience as User["intubation_experience"];
+      input.intubation_experience as User["intubation_experience"];
     const profession = input.profession as User["profession"];
 
     const user = {
@@ -50,6 +55,11 @@ export class RegistrationUseCase {
       ...userWithoutPassword
     } = createdUser;
 
-    return userWithoutPassword as User;
+    const token = this.jwtService.generateToken({
+      user_id: String(user._id),
+      email: user.email,
+    });
+
+    return { ...userWithoutPassword, token };
   }
 }
