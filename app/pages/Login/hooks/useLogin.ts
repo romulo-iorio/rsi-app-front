@@ -5,6 +5,7 @@ import type { ApiError } from "@/app/services/api/interfaces";
 import { login } from "@/app/services/api/login";
 import { useRoutes } from "@/app/hooks";
 import { useState } from "react";
+import { validateData } from "../utils";
 
 const LoginErrorMessages = {
   USER_DOES_NOT_EXIST: "Não existe um usuário com esse e-mail",
@@ -22,6 +23,17 @@ export const useLogin = () => {
   const [password, setPassword] = useState<string>("");
 
   const doLogin = async () => {
+    const errors = validateData({ email, password });
+
+    const hasErrors = Object.keys(errors).length > 0;
+
+    if (hasErrors) {
+      for (const key in errors) {
+        toast.error(errors[key as keyof typeof errors] as string);
+      }
+      return;
+    }
+
     const loginPromise = login({ email, password });
 
     toast.promise(loginPromise, {
