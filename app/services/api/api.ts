@@ -1,4 +1,3 @@
-import type { AxiosResponse } from "axios";
 import axios from "axios";
 
 const apiUrl =
