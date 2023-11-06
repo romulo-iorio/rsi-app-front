@@ -13,7 +13,11 @@ export class UserRepository {
     return this.collection.findOne({ email });
   }
 
-  public async create(input: Partial<User>) {
-    return this.collection.insertOne(input as User);
+  public async create(data: Partial<User>) {
+    return this.collection.insertOne(data as User);
+  }
+
+  public async update(_id: number, data: Partial<User>) {
+    return this.collection.updateOne({ _id }, { $set: data });
   }
 }
