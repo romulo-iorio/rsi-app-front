@@ -1,5 +1,9 @@
 "use client";
 
+import { toast } from "react-toastify";
+import { useEffect } from "react";
+
+import { useRoutes } from "@/app/hooks";
 import PageContextProvider from "@/app/store/PageContext";
 
 import { LogoOnClipboard } from "./LogoOnClipboard";
@@ -10,11 +14,27 @@ import { Menu } from "./Menu";
 
 interface Props {
   children: React.ReactNode;
+  isPrivate: boolean;
   title: string;
 }
 
-export const PageLayout: React.FC<Props> = ({ title, children }) => (
-  <PageContextProvider title={title}>
+const PageLayoutWithoutContext: React.FC<Props> = ({
+  title,
+  children,
+  isPrivate,
+}) => {
+  const { goToLogin } = useRoutes();
+
+  useEffect(() => {
+    const hasToken = window.localStorage.getItem("token");
+
+    if (hasToken || !isPrivate) return;
+
+    toast.error("Você precisa estar logado para acessar essa página!");
+    goToLogin();
+  }, [isPrivate]);
+
+  return (
     <Background>
       <div className="flex w-screen h-screen justify-center items-center">
         <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] h-[80%]">
@@ -32,5 +52,11 @@ export const PageLayout: React.FC<Props> = ({ title, children }) => (
         </div>
       </div>
     </Background>
+  );
+};
+
+export const PageLayout: React.FC<Props> = (props) => (
+  <PageContextProvider title={props.title}>
+    <PageLayoutWithoutContext {...props} />
   </PageContextProvider>
 );
