@@ -2,6 +2,7 @@ import * as Pages from "./pages";
 
 export interface RouteProps {
   Component: React.PropsWithChildren<any>;
+  isPrivate: boolean;
   routerName: string;
   indexName?: string;
   indexed?: boolean;
@@ -15,12 +16,28 @@ const pages: RouteProps[] = [
     name: "Recuperar senha",
     path: "/forgot-password",
     routerName: "goToForgotPassword",
+    isPrivate: false,
+  },
+  {
+    Component: Pages.NewPassword,
+    name: "Mudar senha",
+    path: "/new-password",
+    routerName: "goToNewPassword",
+    isPrivate: false,
+  },
+  {
+    Component: Pages.Register,
+    name: "Cadastro",
+    path: "/register",
+    routerName: "goToRegister",
+    isPrivate: false,
   },
   {
     Component: Pages.Cover,
     name: "Capa",
     path: "/",
     routerName: "goToCover",
+    isPrivate: false,
   },
   {
     Component: Pages.Login,
@@ -28,18 +45,7 @@ const pages: RouteProps[] = [
     path: "/login",
     routerName: "goToLogin",
     indexed: true,
-  },
-  {
-    Component: Pages.NewPassword,
-    name: "Mudar senha",
-    path: "/new-password",
-    routerName: "goToNewPassword",
-  },
-  {
-    Component: Pages.Register,
-    name: "Cadastro",
-    path: "/register",
-    routerName: "goToRegister",
+    isPrivate: false,
   },
   {
     Component: Pages.RespiratoryTractCheckUp,
@@ -48,6 +54,7 @@ const pages: RouteProps[] = [
     path: "/respiratory-tract-check-up",
     routerName: "goToRespiratoryTractCheckUp",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.RespiratoryTractCheckUpMallampati,
@@ -56,6 +63,7 @@ const pages: RouteProps[] = [
     path: "/respiratory-tract-check-up-mallampati",
     routerName: "goToRespiratoryTractCheckUpMallampati",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.RespiratoryTractCheckUpImages,
@@ -64,6 +72,7 @@ const pages: RouteProps[] = [
     path: "/respiratory-tract-check-up-images",
     routerName: "goToRespiratoryTractCheckUpImages",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.RespiratoryTractCheckUpMacocha,
@@ -72,6 +81,7 @@ const pages: RouteProps[] = [
     path: "/respiratory-tract-check-up-macocha",
     routerName: "goToRespiratoryTractCheckUpMacocha",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.Positioning,
@@ -79,6 +89,7 @@ const pages: RouteProps[] = [
     path: "/positioning",
     routerName: "goToPositioning",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.InternationalRecommendations,
@@ -86,6 +97,7 @@ const pages: RouteProps[] = [
     path: "/international-recommendations",
     routerName: "goToInternationalRecommendations",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.VortexScheme,
@@ -93,6 +105,7 @@ const pages: RouteProps[] = [
     path: "/vortex-scheme",
     routerName: "goToVortexScheme",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.FlowChartGeneralVision,
@@ -100,6 +113,7 @@ const pages: RouteProps[] = [
     path: "/flow-chart-general-vision",
     routerName: "goToFlowChartGeneralVision",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.DifficultIntubation,
@@ -108,6 +122,7 @@ const pages: RouteProps[] = [
     path: "/difficult-intubation",
     routerName: "goToDifficultIntubation",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.DifficultVentilation,
@@ -116,6 +131,7 @@ const pages: RouteProps[] = [
     path: "/difficult-ventilation",
     routerName: "goToDifficultVentilation",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.RapidSequenceInduction,
@@ -123,6 +139,7 @@ const pages: RouteProps[] = [
     path: "/rapid-sequence-induction",
     routerName: "goToRapidSequenceInduction",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.AwakeIntubation,
@@ -130,6 +147,7 @@ const pages: RouteProps[] = [
     path: "/awake-intubation",
     routerName: "goToAwakeIntubation",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.AfterAnesthesicInduction,
@@ -137,6 +155,7 @@ const pages: RouteProps[] = [
     path: "/after-anesthesic-induction",
     routerName: "goToAfterAnesthesicInduction",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.LaryngealMask,
@@ -144,6 +163,7 @@ const pages: RouteProps[] = [
     path: "/laryngeal-mask",
     routerName: "goToLaryngealMask",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.CervicalAccess,
@@ -151,6 +171,7 @@ const pages: RouteProps[] = [
     path: "/cervical-access",
     routerName: "goToCervicalAccess",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.RapidSequenceInductionTips,
@@ -158,6 +179,7 @@ const pages: RouteProps[] = [
     path: "/rapid-sequence-induction-tips",
     routerName: "goToRapidSequenceInductionTips",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.SummaryVideo,
@@ -165,6 +187,7 @@ const pages: RouteProps[] = [
     path: "/summary-video",
     routerName: "goToSummaryVideo",
     indexed: true,
+    isPrivate: true,
   },
   {
     Component: Pages.WhatAboutAnesthetists,
@@ -172,6 +195,7 @@ const pages: RouteProps[] = [
     path: "/what-about-anesthetists",
     routerName: "goToWhatAboutAnesthetists",
     indexed: true,
+    isPrivate: true,
   },
 ];
 
