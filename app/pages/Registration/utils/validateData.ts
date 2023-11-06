@@ -1,4 +1,4 @@
-import { RegistrationBody } from "@/app/services/api/registration";
+import type { RegistrationBody } from "@/app/services/api/registration";
 
 export const validateData = (data: RegistrationBody | null) => {
   const errors: Partial<Record<keyof RegistrationBody, string>> = {};
