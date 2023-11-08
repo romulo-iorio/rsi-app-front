@@ -14,12 +14,25 @@ const tableData = [
   { parameter: "A: Não-anestesista", score: "1" },
 ];
 
-interface TableRowProps {
-  Input?: JSX.Element;
-  centered?: boolean;
-  parameter: string;
-  score?: string;
-}
+const commonClassNames = "text-center text-[1.25rem] mt-[0.5rem] font-bold";
+
+const getText = (sum: number): JSX.Element => {
+  if (sum === 0)
+    return (
+      <p className={`${commonClassNames} flex flex-col`}>
+        <span className="text-green-500">{"≤"} 3 - IOT* não difícil</span>
+
+        <span className="text-red-500">{">"} 3 - IOT* difícil</span>
+      </p>
+    );
+
+  if (sum > 3)
+    return <p className={`${commonClassNames} text-red-500`}>IOT* difícil</p>;
+
+  return (
+    <p className={`${commonClassNames} text-green-500`}>IOT* não difícil</p>
+  );
+};
 
 export const RespiratoryTractCheckUpMacocha: React.FC = () => {
   const { goToRespiratoryTractCheckUpImages, goToPositioning } = useRoutes();
@@ -38,8 +51,7 @@ export const RespiratoryTractCheckUpMacocha: React.FC = () => {
     setMacochaSum(Number(onlyNumbers));
   };
 
-  const text = macochaSum >= 3 ? "IOT* difícil" : "IOT* não difícil";
-  const textColor = macochaSum >= 3 ? "text-red-500" : "text-green-500";
+  const text = getText(macochaSum);
 
   return (
     <BaseLayout.Root>
@@ -63,7 +75,7 @@ export const RespiratoryTractCheckUpMacocha: React.FC = () => {
                   <input
                     className="w-full text-center bg-transparent outline-none"
                     onChange={onChangeMacochaSum}
-                    value={`${macochaSum}`}
+                    value={`${macochaSum || ""}`}
                     type="text"
                   />
                 }
@@ -73,13 +85,9 @@ export const RespiratoryTractCheckUpMacocha: React.FC = () => {
             </tbody>
           </table>
 
-          <p
-            className={`text-center text-[1.5rem] mt-[1rem] font-bold ${textColor}`}
-          >
-            {text}
-          </p>
+          {text}
 
-          <p className={`text-center text-[0.75rem] mt-[1rem] text-gray-500`}>
+          <p className={`text-center text-[0.75rem] mt-[0.5rem] text-gray-500`}>
             *IOT = Intubação orotraqueal
           </p>
         </div>
