@@ -22,3 +22,6 @@ export * from "./LaryngealMask";
 export * from "./CervicalAccess";
 export * from "./WhatAboutAnesthetists";
 export * from "./Cover";
+export * from "./CervicalAccessVideo";
+export * from "./AboutTheAuthor";
+export * from "./References";
