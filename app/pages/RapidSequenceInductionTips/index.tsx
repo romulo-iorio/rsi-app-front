@@ -2,7 +2,7 @@ import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const RapidSequenceInductionTips: React.FC = () => {
-  const { goToCervicalAccess, goToSummaryVideo } = useRoutes();
+  const { goToCervicalAccessVideo, goToSummaryVideo } = useRoutes();
 
   return (
     <BaseLayout.Root>
@@ -28,8 +28,8 @@ export const RapidSequenceInductionTips: React.FC = () => {
             <div className="flex flex-col w-fit h-fit justify-center gap-[2rem] bg-red-300 rounded-3xl p-4 lg:p-5">
               <span>
                 <b>Atenção:</b>
+                <p>Reduzir doses se risco hipotensão</p>
                 <p>
-                  Se risco de estômago cheio e hipotensão {"\n"}
                   Hipnóticos podem ter efeito menor que 10 minutos (Refazer
                   dose?)
                 </p>
@@ -48,7 +48,7 @@ export const RapidSequenceInductionTips: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToCervicalAccess} label="Voltar" />
+        <Button onClick={goToCervicalAccessVideo} label="Voltar" />
 
         <Button onClick={goToSummaryVideo} label="Próximo" />
       </BaseLayout.Buttons>
