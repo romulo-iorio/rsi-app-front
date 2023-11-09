@@ -22,11 +22,11 @@ export const AboutTheAuthor: React.FC = () => {
             <p className="text-black">Plínio Holanda - Anestesista</p>
             <a
               className="text-blue-500 hover:underline"
-              href="mailto:anestesiaceara@gmail.com"
+              href="mailto:anesthesiaceara@gmail.com"
               rel="noreferrer"
               target="_blank"
             >
-              anestesiaceara@gmail.com
+              anesthesiaceara@gmail.com
             </a>
           </div>
         </div>
