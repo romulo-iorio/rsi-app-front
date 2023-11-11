@@ -117,8 +117,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.DifficultIntubation,
-    name: "Fluxograma - Intubação difícil?",
-    indexName: "Fluxograma - Intubação difícil?",
+    name: "Intubação orotraqueal (IOT)",
     path: "/difficult-intubation",
     routerName: "goToDifficultIntubation",
     indexed: true,
