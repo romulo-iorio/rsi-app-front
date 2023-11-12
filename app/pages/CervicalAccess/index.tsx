@@ -38,10 +38,15 @@ export const CervicalAccess: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToLaryngealMask} label="Voltar" />
+        <Button
+          onClick={goToLaryngealMask}
+          className="!w-[8rem]"
+          label="Voltar"
+        />
 
         <Button
           onClick={goToCervicalAccessVideo}
+          className="!w-[8rem]"
           label={
             <span className="flex flex-row items-center">
               <BsCameraVideo size={20} className="mr-2" />
