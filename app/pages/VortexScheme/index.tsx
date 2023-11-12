@@ -19,7 +19,7 @@ export const VortexScheme: React.FC = () => {
             width={350}
           />
 
-          <p className={`${commonTextClassName} top-[0rem] lg:-top-[1.25rem]`}>
+          <p className={`${commonTextClassName} top-[0.5rem] lg:-top-[1rem]`}>
             Máscara facial
           </p>
 
