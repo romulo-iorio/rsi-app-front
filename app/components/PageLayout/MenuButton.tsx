@@ -20,10 +20,10 @@ export const MenuButton: React.FC = () => {
 
   return (
     <div
-      className="absolute top-[3rem] md:lg:top-[1.25rem] left-[1.25rem] cursor-pointer p-2 bg-[#90C7BE] hover:bg-[#62C8B8] rounded-md transition-all active:translate-y-1"
+      className="absolute top-[2rem] md:lg:top-[1.25rem] lg:left-[1.25rem] left-[1rem] cursor-pointer lg:p-2 p-1 bg-[#90C7BE] hover:bg-[#62C8B8] rounded-md transition-all active:translate-y-1 z-[10]"
       onClick={onClick}
     >
-      <Icon className="text-black text-[1.5rem]" />
+      <Icon className="text-black lg:text-[1.5rem] text-[1.25rem]" />
     </div>
   );
 };
