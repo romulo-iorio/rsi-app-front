@@ -1,5 +1,7 @@
-import { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { AppProps } from "next/app";
+import { CacheProvider } from "@chakra-ui/next-js";
 
 function App({ Component, pageProps }: AppProps) {
   const [render, setRender] = useState(false);
@@ -8,6 +10,14 @@ function App({ Component, pageProps }: AppProps) {
 
   if (typeof window === "undefined") return null;
 
-  return render ? <Component {...pageProps} /> : null;
+  if (!render) return null;
+
+  return (
+    <CacheProvider>
+      <ChakraProvider>
+        <Component {...pageProps} />;
+      </ChakraProvider>
+    </CacheProvider>
+  );
 }
 export default App;
