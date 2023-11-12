@@ -34,7 +34,7 @@ const PageLayoutWithoutContext: React.FC<Props> = ({ isPrivate, children }) => {
   return (
     <Background>
       <div className="flex w-screen h-screen justify-center items-center">
-        <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] lg:h-[80%] h-full">
+        <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] lg:h-[80%] h-[100dvh]">
           {/* <Menu /> */}
 
           <Clipboard>
