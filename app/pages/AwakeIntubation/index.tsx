@@ -1,33 +1,25 @@
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-const listItems: string[] = [
-  "Uso de O₂ nasal suplementar, idealmente com cateter de alto fluxo",
-  "Uso de anti-sialogogos como atropina 0.25mg EV",
-  "Sedação com algumas drogas, entre elas, remifentanil 1-3ng/ml, midazolam 0.5mg/vez, dexmedetomidina 0.5μg/kg/h até o paciente atingir um grau de sedação ideal sem depressão respiratória",
-  "Anestesia tópica de todas as vias aéreas com lidocaína spray até um máximo de 9mg/kg (peso magro)",
-  "Bloqueios de vias aéreas (transcrico, laríngeo superior) podem ser realizados",
-  "Não há consenso quanto ao equipamento utilizado para a intubação traqueal, talvez o videolaringoscópio",
-  'Em caso de falha: reportar-se à "intubação em sequência rápida"',
-];
+import { ListItem } from "../RapidSequenceInduction/ListItem";
+import { listItems } from "./listItems";
 
 export const AwakeIntubation: React.FC = () => {
-  const { goBack, goToAfterAnesthesicInduction } = useRoutes();
+  const { goBack, goToAfterAnesthesicInduction, goToRapidSequenceInduction } =
+    useRoutes();
 
   const renderListItems = listItems.map((item, index) => (
-    <li key={index} className="text-black">
-      {item}
-    </li>
+    <ListItem key={index} item={item} index={index} />
   ));
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!justify-around !h-[90%] !lg:h-[80%] !pt-[0rem] !lg:pt-[1rem] !pb-[3rem]">
-        <div className="flex flex-row h-full w-full text-black text-[0.875rem] items-center justify-center px-5 lg:px-2">
-          <ol className="flex flex-col w-full h-full justify-center gap-[1rem] list-decimal">
-            {renderListItems}
-          </ol>
-        </div>
+      <BaseLayout.Content className="!justify-around !h-[79%] !lg:h-[79%] !pt-[0rem] !lg:pt-[1rem] !pb-0 text-black text-[0.875rem] px-5 lg:px-2 !overflow-y-hidden">
+        <ol className="flex flex-col w-full h-fit gap-[1rem] list-decimal overflow-y-auto">
+          {renderListItems}
+        </ol>
+
+        <Button onClick={goToRapidSequenceInduction} label="Insucesso?" />
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
