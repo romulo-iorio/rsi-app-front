@@ -23,7 +23,7 @@ const Option: React.FC<OptionProps> = ({
 
   return (
     <span
-      className="flex items-center justify-start gap-[1rem] cursor-pointer"
+      className="flex items-center justify-start lg:gap-[1rem] gap-[0.5rem] cursor-pointer lg:text-[1rem] text-[0.75rem]"
       onClick={() => onChange(option)}
     >
       <p>{checkedText}</p>
@@ -58,7 +58,7 @@ export const RadioWithLabel: React.FC<Props> = ({
     <div className="text-black text-[1rem] lg:text-[1rem] w-full relative">
       <b className="ml-[1rem]">{label}</b>
 
-      <div className="flex items-center justify-around w-full gap-[1rem] mt-[1rem]">
+      <div className="flex items-center justify-around w-full lg:gap-[1rem] gap-[0.5rem] mt-[1rem]">
         {renderOptions}
       </div>
     </div>
