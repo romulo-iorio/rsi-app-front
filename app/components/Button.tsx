@@ -1,5 +1,5 @@
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  label: string;
+  label: string | JSX.Element;
 }
 
 export const Button: React.FC<Props> = ({ label, ...props }) => (
