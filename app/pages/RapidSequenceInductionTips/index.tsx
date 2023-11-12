@@ -1,7 +1,8 @@
+import { RapidSequenceInductionTips } from "@/app/components/RapidSequenceInductionTips";
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
-export const RapidSequenceInductionTips: React.FC = () => {
+export const RapidSequenceInductionDosesAndTips: React.FC = () => {
   const { goToCervicalAccessVideo, goToSummaryVideo } = useRoutes();
 
   return (
@@ -24,26 +25,7 @@ export const RapidSequenceInductionTips: React.FC = () => {
             </span>
           </div>
 
-          <div className="flex flex-col w-1/2 h-full justify-center">
-            <div className="flex flex-col w-fit h-fit justify-center gap-[2rem] bg-red-300 rounded-3xl p-4 lg:p-5">
-              <span>
-                <b>Atenção:</b>
-                <p>Reduzir doses se risco hipotensão</p>
-                <p>
-                  Hipnóticos podem ter efeito menor que 10 minutos (Refazer
-                  dose?)
-                </p>
-              </span>
-
-              <span>
-                <b>Cuidado:</b>
-                <p>
-                  Paciente que acorda e faz respiração forçada com glote fechada
-                  pode fazer edema agudo de pressão negativa
-                </p>
-              </span>
-            </div>
-          </div>
+          <RapidSequenceInductionTips />
         </div>
       </BaseLayout.Content>
 
