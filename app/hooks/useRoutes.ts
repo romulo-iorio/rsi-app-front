@@ -34,8 +34,6 @@ interface Return {
 }
 
 const pathsThatShouldSetLastPage = [
-  "/difficult-intubation",
-  "/difficult-ventilation",
   "/rapid-sequence-induction",
   "/awake-intubation",
 ];
@@ -53,8 +51,7 @@ export const useRoutes = (): Return => {
         window.location.pathname
       );
 
-      if (shouldSetLastPage)
-        setLastPage((p) => [...p, window.location.pathname]);
+      if (shouldSetLastPage) setLastPage(window.location.pathname);
 
       navigate(path);
     };
@@ -63,11 +60,8 @@ export const useRoutes = (): Return => {
   }, {} as Return);
 
   routes.goBack = () => {
-    navigate(lastPage[lastPage.length - 1]);
-    setLastPage((p) => {
-      p.pop();
-      return p;
-    });
+    navigate(lastPage);
+    setLastPage("");
   };
 
   return routes;
