@@ -8,6 +8,16 @@ export const DifficultIntubation: React.FC = () => {
   const { goToLogin, goToRapidSequenceInduction, goToDifficultVentilation } =
     useRoutes();
 
+  const onClickOnYes = () => {
+    localStorage.setItem("isDifficultIntubation", "true");
+    goToDifficultVentilation();
+  };
+
+  const onClickOnNo = () => {
+    localStorage.setItem("isDifficultIntubation", "false");
+    goToRapidSequenceInduction();
+  };
+
   return (
     <BaseLayout.Root>
       <BaseLayout.Content className="!justify-around !h-[75%]">
@@ -15,14 +25,14 @@ export const DifficultIntubation: React.FC = () => {
 
         <div className="flex flex-row justify-center items-center lg:gap-[3rem] gap-[1.5rem]">
           <Button
-            onClick={goToDifficultVentilation}
             className={flowChartOptionsButtonsClassName}
+            onClick={onClickOnYes}
             label="Sim"
           />
 
           <Button
-            onClick={goToRapidSequenceInduction}
             className={flowChartOptionsButtonsClassName}
+            onClick={onClickOnNo}
             label="Não"
           />
         </div>
