@@ -64,7 +64,10 @@ export const useRoutes = (): Return => {
 
   routes.goBack = () => {
     navigate(lastPage[lastPage.length - 1]);
-    setLastPage((p) => p.slice(0, p.length - 1));
+    setLastPage((p) => {
+      p.pop();
+      return p;
+    });
   };
 
   return routes;
