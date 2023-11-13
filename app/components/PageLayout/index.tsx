@@ -35,12 +35,12 @@ const PageLayoutWithoutContext: React.FC<Props> = ({ isPrivate, children }) => {
     <Background>
       <div className="flex w-screen lg:h-screen h-[100dvh] justify-center items-center">
         <div className="flex flex-col justify-start items-center relative w-full lg:w-[35rem] md:lg:h-[40rem] lg:h-[80%] h-[100dvh]">
-          {/* <Menu /> */}
+          <Menu />
 
           <Clipboard>
-            {/* <MenuButton /> */}
+            <MenuButton />
 
-            {/* {isPrivate && <LogoutButton />} */}
+            {isPrivate && <LogoutButton />}
 
             <LogoOnClipboard />
 
