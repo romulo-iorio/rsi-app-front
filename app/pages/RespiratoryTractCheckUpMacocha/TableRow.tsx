@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 interface Props {
   Input?: JSX.Element;
   centered?: boolean;

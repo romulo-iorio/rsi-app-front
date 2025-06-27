@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label: string | JSX.Element;
 }

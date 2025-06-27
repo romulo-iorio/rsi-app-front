@@ -32,7 +32,10 @@ const PageWrapper: React.FC<RouteProps> = ({
 };
 
 const Home = () => {
-  const Pages = useMemo(() => pages.map(PageWrapper), []);
+  const Pages = useMemo(
+    () => pages.map((page) => <PageWrapper key={page.path} {...page} />),
+    []
+  );
 
   return (
     <>
