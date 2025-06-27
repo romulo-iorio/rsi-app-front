@@ -1,4 +1,7 @@
 {
+  "TipsPopover": {
+    "Title": "Dicas"
+  },
   "Navigation": {
     "GoBack": "Voltar",
     "Next": "Próximo",
@@ -18,16 +21,16 @@
     "RapidSequenceInductionTips": {
       "Attention": {
         "Title": "Atenção:",
-        "Content": [
-          "Reduzir doses se risco hipotensão",
-          "Hipnóticos podem ter efeito menor que 10 minutos (Refazer dose?)"
-        ]
+        "Content": {
+          "1": "Reduzir doses se risco de hipotensão",
+          "2": "Hipnóticos podem ter efeito menor que 10 minutos (Refazer dose?)"
+        }
       },
       "Caution": {
         "Title": "Cuidado:",
-        "Content": [
-          "Paciente que acorda e faz respiração forçada com glote fechada pode fazer edema agudo de pressão negativa"
-        ]
+        "Content": {
+          "1": "Paciente que acorda e faz respiração forçada com glote fechada pode fazer edema agudo de pressão negativa"
+        }
       }
     }
   },

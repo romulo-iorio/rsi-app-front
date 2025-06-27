@@ -1,4 +1,7 @@
 {
+  "TipsPopover": {
+    "Title": "Tips"
+  },
   "Navigation": {
     "GoBack": "Go Back",
     "Next": "Next",
@@ -18,16 +21,16 @@
     "RapidSequenceInductionTips": {
       "Attention": {
         "Title": "Attention:",
-        "Content": [
-          "Reduce doses if hypotension risk",
-          "Hypnotics may have an effect shorter than 10 minutes (Repeat dose?)"
-        ]
+        "Content": {
+          "1": "Reduce doses if risk of hypotension",
+          "2": "Hypnotics may have effect for less than 10 minutes (Repeat dose?)"
+        }
       },
       "Caution": {
         "Title": "Caution:",
-        "Content": [
-          "A patient who wakes up and does forced breathing with closed glottis may develop negative pressure pulmonary edema"
-        ]
+        "Content": {
+          "1": "A patient who wakes up and breathes forcefully with a closed glottis may develop negative pressure pulmonary edema"
+        }
       }
     }
   },
