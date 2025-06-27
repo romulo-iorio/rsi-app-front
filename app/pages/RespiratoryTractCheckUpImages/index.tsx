@@ -5,19 +5,34 @@ import {
   Option,
 } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
-
-const imagesOptions: Option[] = [
-  { imageSrc: "/Mallampati4 example.png", label: "Mallampati IV" },
-  { imageSrc: "/micrognatia.png", label: "Micrognatia" },
-  { imageSrc: "/extensao ruim.png", label: "Extensão ruim" },
-  { imageSrc: "/abertura de boca ruim.png", label: "Abertura de boca ruim" },
-];
+import { useTranslation } from "react-i18next";
 
 export const RespiratoryTractCheckUpImages: React.FC = () => {
   const {
     goToRespiratoryTractCheckUpMallampati,
     goToRespiratoryTractCheckUpMacocha,
   } = useRoutes();
+
+  const { t } = useTranslation("common");
+
+  const imagesOptions: Option[] = [
+    {
+      imageSrc: "/Mallampati4 example.png",
+      label: t("Pages.RespiratoryTractCheckUpImages.1.Label"),
+    },
+    {
+      imageSrc: "/micrognatia.png",
+      label: t("Pages.RespiratoryTractCheckUpImages.2.Label"),
+    },
+    {
+      imageSrc: "/extensao ruim.png",
+      label: t("Pages.RespiratoryTractCheckUpImages.3.Label"),
+    },
+    {
+      imageSrc: "/abertura de boca ruim.png",
+      label: t("Pages.RespiratoryTractCheckUpImages.4.Label"),
+    },
+  ];
 
   const renderImages = imagesOptions.map((option) => (
     <ImageWithLabelAndCaptionOption
@@ -42,10 +57,13 @@ export const RespiratoryTractCheckUpImages: React.FC = () => {
       <BaseLayout.Buttons>
         <Button
           onClick={goToRespiratoryTractCheckUpMallampati}
-          label="Voltar"
+          label={t("Navigation.GoBack")}
         />
 
-        <Button onClick={goToRespiratoryTractCheckUpMacocha} label="Próximo" />
+        <Button
+          onClick={goToRespiratoryTractCheckUpMacocha}
+          label={t("Navigation.Next")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

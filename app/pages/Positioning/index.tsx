@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   ImageWithLabelAndCaptionOption,
   BaseLayout,
@@ -7,27 +5,28 @@ import {
   Option,
 } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
-import { PatientTypeEnum, usePageContext } from "@/app/store";
-
-const imagesOptions: Option[] = [
-  {
-    imageSrc: "/olfative position.png",
-    label: "Posição Olfativa",
-    caption: "Travesseiro na região occipital sempre",
-  },
-  {
-    imageSrc: "/ramp position.png",
-    label: "Posição Rampa",
-    caption: "Obesos e grávidas",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export const Positioning: React.FC = () => {
   const {
     goToRespiratoryTractCheckUpMacocha,
     goToInternationalRecommendations,
   } = useRoutes();
-  const { patientType } = usePageContext();
+
+  const { t } = useTranslation("common");
+
+  const imagesOptions: Option[] = [
+    {
+      imageSrc: "/olfative position.png",
+      label: t("Pages.Positioning.Images.1.Label"),
+      caption: t("Pages.Positioning.Images.1.Caption"),
+    },
+    {
+      imageSrc: "/ramp position.png",
+      label: t("Pages.Positioning.Images.2.Label"),
+      caption: t("Pages.Positioning.Images.2.Caption"),
+    },
+  ];
 
   const renderImages = imagesOptions.map((option) => (
     <ImageWithLabelAndCaptionOption
@@ -48,9 +47,15 @@ export const Positioning: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToRespiratoryTractCheckUpMacocha} label="Voltar" />
+        <Button
+          onClick={goToRespiratoryTractCheckUpMacocha}
+          label={t("Navigation.GoBack")}
+        />
 
-        <Button onClick={goToInternationalRecommendations} label="Próximo" />
+        <Button
+          onClick={goToInternationalRecommendations}
+          label={t("Navigation.Next")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

@@ -13,28 +13,28 @@ export interface RouteProps {
 const pages: RouteProps[] = [
   {
     Component: Pages.ForgotPassword,
-    name: "Recuperar senha",
+    name: "ForgotPassword",
     path: "/forgot-password",
     routerName: "goToForgotPassword",
     isPrivate: false,
   },
   {
     Component: Pages.NewPassword,
-    name: "Mudar senha",
+    name: "NewPassword",
     path: "/new-password",
     routerName: "goToNewPassword",
     isPrivate: false,
   },
   {
     Component: Pages.Registration,
-    name: "Cadastro",
+    name: "Registration",
     path: "/registration",
     routerName: "goToRegistration",
     isPrivate: false,
   },
   {
     Component: Pages.Cover,
-    name: "Capa",
+    name: "Cover",
     path: "/",
     routerName: "goToCover",
     isPrivate: false,
@@ -117,7 +117,7 @@ const pages: RouteProps[] = [
   // },
   {
     Component: Pages.DifficultIntubation,
-    name: "Intubação orotraqueal (IOT)",
+    name: "DifficultIntubation",
     path: "/difficult-intubation",
     routerName: "goToDifficultIntubation",
     indexed: true,
@@ -125,7 +125,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.DifficultVentilation,
-    name: "Ventilação sob máscara",
+    name: "DifficultVentilation",
     path: "/difficult-ventilation",
     routerName: "goToDifficultVentilation",
     indexed: true,
@@ -133,7 +133,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.RapidSequenceInduction,
-    name: "Indução em sequência rápida - Como fazer",
+    name: "RapidSequenceInduction",
     path: "/rapid-sequence-induction",
     routerName: "goToRapidSequenceInduction",
     indexed: true,
@@ -141,7 +141,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.AwakeIntubation,
-    name: "Intubação acordado - Como fazer",
+    name: "AwakeIntubation",
     path: "/awake-intubation",
     routerName: "goToAwakeIntubation",
     indexed: true,
@@ -149,7 +149,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.AfterAnesthesicInduction,
-    name: "Após indução anestésica",
+    name: "AfterAnesthesicInduction",
     path: "/after-anesthesic-induction",
     routerName: "goToAfterAnesthesicInduction",
     indexed: true,
@@ -157,7 +157,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.LaryngealMask,
-    name: "Tentativa com máscara laríngea",
+    name: "LaryngealMask",
     path: "/laryngeal-mask",
     routerName: "goToLaryngealMask",
     indexed: true,
@@ -165,7 +165,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.CervicalAccess,
-    name: "Acesso Cervical",
+    name: "CervicalAccess",
     path: "/cervical-access",
     routerName: "goToCervicalAccess",
     indexed: true,
@@ -173,7 +173,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.CervicalAccessVideo,
-    name: "Acesso Cervical - Vídeo",
+    name: "CervicalAccessVideo",
     path: "/cervical-access-video",
     routerName: "goToCervicalAccessVideo",
     indexed: true,
@@ -189,7 +189,7 @@ const pages: RouteProps[] = [
   // },
   {
     Component: Pages.SummaryVideo,
-    name: "Vídeo resumo",
+    name: "SummaryVideo",
     path: "/summary-video",
     routerName: "goToSummaryVideo",
     indexed: true,
@@ -197,7 +197,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.WhatAboutAnesthetists,
-    name: "E para anestesistas?",
+    name: "WhatAboutAnesthetists",
     path: "/what-about-anesthetists",
     routerName: "goToWhatAboutAnesthetists",
     indexed: true,
@@ -205,7 +205,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.AboutTheAuthor,
-    name: "Sobre o autor",
+    name: "AboutTheAuthor",
     path: "/about-the-author",
     routerName: "goToAboutTheAuthor",
     indexed: true,
@@ -213,7 +213,7 @@ const pages: RouteProps[] = [
   },
   {
     Component: Pages.References,
-    name: "Referências",
+    name: "References",
     path: "/references",
     routerName: "goToReferences",
     indexed: true,

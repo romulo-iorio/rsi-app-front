@@ -1,8 +1,10 @@
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
+import { useTranslation } from "react-i18next";
 
 export const SummaryVideo: React.FC = () => {
   const { goToCervicalAccessVideo, goToWhatAboutAnesthetists } = useRoutes();
+  const { t } = useTranslation("common");
 
   return (
     <BaseLayout.Root>
@@ -13,9 +15,15 @@ export const SummaryVideo: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToCervicalAccessVideo} label="Voltar" />
+        <Button
+          onClick={goToCervicalAccessVideo}
+          label={t("Navigation.GoBack")}
+        />
 
-        <Button onClick={goToWhatAboutAnesthetists} label="Próximo" />
+        <Button
+          onClick={goToWhatAboutAnesthetists}
+          label={t("Navigation.Next")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

@@ -7,22 +7,28 @@ import type { ApiError } from "@/app/services/api/interfaces";
 import { registration } from "@/app/services/api/registration";
 import { useRoutes } from "@/app/hooks";
 import { validateData } from "../utils";
-
-const RegistrationErrorMessages = {
-  USER_WITH_EMAIL_EXISTS: "Já existe um usuário com esse e-mail",
-};
-
-type RegistrationErrorType = keyof typeof RegistrationErrorMessages;
-
-const defaultErrorMessage = "Falha ao realizar cadastro!";
+import { useTranslation } from "react-i18next";
 
 export const useRegistration = () => {
   const { goToDifficultIntubation } = useRoutes();
+  const { t } = useTranslation("common");
 
   const [data, setData] = useState<RegistrationBody | null>(null);
 
+  const RegistrationErrorMessages = {
+    USER_WITH_EMAIL_EXISTS: t(
+      "Pages.Registration.ErrorMessages.USER_WITH_EMAIL_EXISTS"
+    ),
+  };
+
+  type RegistrationErrorType = keyof typeof RegistrationErrorMessages;
+
+  const defaultErrorMessage = t(
+    "Pages.Registration.ErrorMessages.DefaultErrorMessage"
+  );
+
   const doRegistration = async () => {
-    const errors = validateData(data);
+    const errors = validateData(data, t);
     const hasErrors = Object.keys(errors).length > 0;
     if (hasErrors) {
       for (const key in errors) {
@@ -36,8 +42,8 @@ export const useRegistration = () => {
     const registrationPromise = registration(data);
 
     toast.promise(registrationPromise, {
-      success: "Cadastro realizado com sucesso! Redirecionando...",
-      pending: "Realizando cadastro...",
+      success: t("Pages.Registration.Success"),
+      pending: t("Pages.Registration.Pending"),
     });
 
     try {

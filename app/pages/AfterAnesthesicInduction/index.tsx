@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
 import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
@@ -13,6 +14,7 @@ const contentStyle = {
 export const AfterAnesthesicInduction: React.FC = () => {
   const { goBack, goToLaryngealMask } = useRoutes();
   const [showText, setShowText] = useState(false);
+  const { t } = useTranslation("common");
 
   const onClick = () => setShowText(true);
 
@@ -23,11 +25,12 @@ export const AfterAnesthesicInduction: React.FC = () => {
         style={contentStyle}
       >
         <p className="bg-[#90C7BEAA] rounded-[1rem] p-2 lg:text-[1rem] text-[0.8rem]">
-          Intubação traqueal – máximo 3 tentativas (videolaringoscópio,
-          laringoscópio tradicional, MacCoy). Capnógrafo disponível?​
+          {t("Pages.AfterAnesthesicInduction.Content")}
         </p>
 
-        <FlowChartQuestion question="Sucesso na IOT?" />
+        <FlowChartQuestion
+          question={t("Pages.AfterAnesthesicInduction.FlowChartQuestion")}
+        />
 
         <div
           className="flex flex-row justify-center items-start gap-[1rem] lg:gap-[3rem]"
@@ -37,22 +40,24 @@ export const AfterAnesthesicInduction: React.FC = () => {
             <Button
               className={`${flowChartOptionsButtonsClassName} opacity-[0.7]`}
               onClick={onClick}
-              label="Sim"
+              label={t("General.Yes")}
             />
 
-            {showText && <p>Respirador</p>}
+            {showText && (
+              <p>{t("Pages.AfterAnesthesicInduction.Respirator")}</p>
+            )}
           </div>
 
           <Button
             className={`${flowChartOptionsButtonsClassName} opacity-[0.7]`}
             onClick={goToLaryngealMask}
-            label="Não"
+            label={t("General.No")}
           />
         </div>
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goBack} label="Voltar" />
+        <Button onClick={goBack} label={t("Navigation.GoBack")} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 
 export const CervicalAccessVideo: React.FC = () => {
   const { goToSummaryVideo, goToCervicalAccess } = useRoutes();
+  const { t } = useTranslation("common");
 
   return (
     <BaseLayout.Root>
@@ -13,9 +16,9 @@ export const CervicalAccessVideo: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToCervicalAccess} label="Voltar" />
+        <Button onClick={goToCervicalAccess} label={t("Navigation.GoBack")} />
 
-        <Button onClick={goToSummaryVideo} label="Próximo" />
+        <Button onClick={goToSummaryVideo} label={t("Navigation.Next")} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

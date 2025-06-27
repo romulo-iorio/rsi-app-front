@@ -4,6 +4,7 @@ import pages from "@/app/routes";
 
 import { clipBoardStyling } from "./Clipboard";
 import { MenuIndexItem } from "./MenuIndexItem";
+import { useTranslation } from "react-i18next";
 
 const indexedPages = pages.filter((page) => page.indexed);
 
@@ -20,6 +21,7 @@ const getMenuOpenClassName = (
 export const Menu: React.FC = () => {
   const { isMediumOrSmaller } = useWindowSize();
   const { menuIsOpen } = usePageContext();
+  const { t } = useTranslation("common");
 
   const menuOpenClassName = getMenuOpenClassName(menuIsOpen, isMediumOrSmaller);
 
@@ -45,7 +47,7 @@ export const Menu: React.FC = () => {
       style={{ ...clipBoardStyling.style }}
     >
       <b className="text-[1rem] lg:text-[1.5rem] font-bold uppercase mb-[1rem] text-center w-full">
-        Índice
+        {t("Components.PageLayout.Menu.Index")}
       </b>
 
       <ol className="flex flex-col justify-start items-start w-full h-full gap-[0.5rem] overflow-y-auto lg:overflow-hidden lg:hover:overflow-y-auto list-inside list-decimal">

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
 import { BaseLayout, Button } from "@/app/components";
@@ -5,6 +6,7 @@ import { useRoutes } from "@/app/hooks";
 
 export const AboutTheAuthor: React.FC = () => {
   const { goToWhatAboutAnesthetists, goToReferences } = useRoutes();
+  const { t } = useTranslation("common");
 
   return (
     <BaseLayout.Root>
@@ -19,7 +21,7 @@ export const AboutTheAuthor: React.FC = () => {
           />
 
           <div className="flex flex-col gap-[0.25em] items-center justify-center">
-            <p className="text-black">Plínio Holanda - Anestesista</p>
+            <p className="text-black">{t("Pages.AboutTheAuthor.Name")}</p>
             <a
               className="text-blue-500 hover:underline"
               href="mailto:anesthesiaceara@gmail.com"
@@ -33,9 +35,12 @@ export const AboutTheAuthor: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToWhatAboutAnesthetists} label="Voltar" />
+        <Button
+          onClick={goToWhatAboutAnesthetists}
+          label={t("Navigation.GoBack")}
+        />
 
-        <Button onClick={goToReferences} label="Próximo" />
+        <Button onClick={goToReferences} label={t("Navigation.Next")} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

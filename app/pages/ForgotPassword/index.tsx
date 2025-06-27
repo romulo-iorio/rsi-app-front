@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import {
   BaseContentContainer,
   BaseButtonsContainer,
@@ -11,22 +13,23 @@ export const ForgotPassword: React.FC = () => {
   const { goToLogin } = useRoutes();
 
   const { doForgotPassword, email, setEmail } = useForgotPassword();
+  const { t } = useTranslation("common");
 
   return (
     <>
       <BaseContentContainer>
         <InputWithLabel
-          placeholder="Preencha seu e-mail"
+          placeholder={t("ForgotPassword.Input.Email.Placeholder")}
           onChange={setEmail}
-          label="E-mail *"
+          label={t("ForgotPassword.Input.Email.Label")}
           value={email}
         />
       </BaseContentContainer>
 
       <BaseButtonsContainer>
-        <Button label="Voltar" onClick={goToLogin} />
+        <Button label={t("Navigation.GoBack")} onClick={goToLogin} />
 
-        <Button label="Enviar" onClick={doForgotPassword} />
+        <Button label={t("Navigation.Send")} onClick={doForgotPassword} />
       </BaseButtonsContainer>
     </>
   );

@@ -7,17 +7,22 @@ import type { ApiError } from "@/app/services/api/interfaces";
 import { resetPassword } from "@/app/services/api/reset-password";
 import { useRoutes } from "@/app/hooks";
 import { validateData } from "../utils";
-
-const RegistrationErrorMessages = {
-  USER_DOES_NOT_EXIST: "Não existe um usuário com esse e-mail",
-};
-
-type ResetPasswordErrorType = keyof typeof RegistrationErrorMessages;
-
-const defaultErrorMessage = "Falha ao alterar senha!";
+import { useTranslation } from "react-i18next";
 
 export const useResetPassword = () => {
   const { goToLogin } = useRoutes();
+  const { t } = useTranslation("common");
+
+  const RegistrationErrorMessages = {
+    USER_DOES_NOT_EXIST: t(
+      "Pages.NewPassword.ErrorMessages.USER_DOES_NOT_EXIST"
+    ),
+  };
+  type ResetPasswordErrorType = keyof typeof RegistrationErrorMessages;
+
+  const defaultErrorMessage = t(
+    "Pages.NewPassword.ErrorMessages.DefaultErrorMessage"
+  );
 
   const [data, setData] = useState<ResetPasswordBody | null>(() => {
     const token = window.location.search.split("=")[1];
@@ -25,7 +30,7 @@ export const useResetPassword = () => {
   });
 
   const doResetPassword = async () => {
-    const errors = validateData(data);
+    const errors = validateData(data, t);
     const hasErrors = Object.keys(errors).length > 0;
     if (hasErrors) {
       for (const key in errors) {
@@ -39,9 +44,8 @@ export const useResetPassword = () => {
     const registrationPromise = resetPassword(data);
 
     toast.promise(registrationPromise, {
-      success:
-        "Senha alterada com sucesso! Redirecionando para a tela de login...",
-      pending: "Alterando senha...",
+      success: t("Pages.NewPassword.Success"),
+      pending: t("Pages.NewPassword.Pending"),
     });
 
     try {

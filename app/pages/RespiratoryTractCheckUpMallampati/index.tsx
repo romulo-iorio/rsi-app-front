@@ -6,10 +6,12 @@ import {
   Button,
 } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
+import { useTranslation } from "react-i18next";
 
 export const RespiratoryTractCheckUpMallampati: React.FC = () => {
   const { goToRespiratoryTractCheckUp, goToRespiratoryTractCheckUpImages } =
     useRoutes();
+  const { t } = useTranslation("common");
 
   const [mallampati, setMallampati] = useState("");
 
@@ -17,27 +19,43 @@ export const RespiratoryTractCheckUpMallampati: React.FC = () => {
     <BaseLayout.Root>
       <BaseLayout.Content className="!h-[80%] overflow-hidden !pt-0 !sm:pt-[1rem] !lg:pt-0">
         <RadioWithLabelImageAndCaption
-          label="Classificação de Mallampati"
+          label={t("RespiratoryTractCheckUpMallampati.Label")}
           options={[
             {
-              caption: "Palato mole, fauce, úvula e pilares visíveis",
+              caption: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.1.Caption"
+              ),
               imageSrc: "/Mallampati1.png",
-              label: "Classe I",
+              label: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.1.Label"
+              ),
             },
             {
-              caption: "Palato mole, fauce e úvula visíveis",
+              caption: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.2.Caption"
+              ),
               imageSrc: "/Mallampati2.png",
-              label: "Classe II",
+              label: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.2.Label"
+              ),
             },
             {
-              caption: "Palato mole e base da úvula visíveis",
+              caption: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.3.Caption"
+              ),
               imageSrc: "/Mallampati3.png",
-              label: "Classe III",
+              label: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.3.Label"
+              ),
             },
             {
-              caption: "Apenas palato duro visível",
+              caption: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.4.Caption"
+              ),
               imageSrc: "/Mallampati4.png",
-              label: "Classe IV",
+              label: t(
+                "Pages.RespiratoryTractCheckUpMallampati.Options.4.Label"
+              ),
             },
           ]}
           onChange={setMallampati}
@@ -46,9 +64,15 @@ export const RespiratoryTractCheckUpMallampati: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToRespiratoryTractCheckUp} label="Voltar" />
+        <Button
+          onClick={goToRespiratoryTractCheckUp}
+          label={t("Navigation.GoBack")}
+        />
 
-        <Button onClick={goToRespiratoryTractCheckUpImages} label="Próximo" />
+        <Button
+          onClick={goToRespiratoryTractCheckUpImages}
+          label={t("Navigation.Next")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

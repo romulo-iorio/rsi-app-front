@@ -12,6 +12,7 @@ import { Background } from "./Background";
 import { MenuButton } from "./MenuButton";
 import { Clipboard } from "./Clipboard";
 import { Menu } from "./Menu";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   children: React.ReactNode;
@@ -21,13 +22,14 @@ interface Props {
 
 const PageLayoutWithoutContext: React.FC<Props> = ({ isPrivate, children }) => {
   const { goToLogin } = useRoutes();
+  const { t } = useTranslation("common");
 
   useEffect(() => {
     const hasToken = window.localStorage.getItem("token");
 
     if (hasToken || !isPrivate) return;
 
-    toast.error("Você precisa estar logado para acessar essa página!");
+    toast.error(t("General.NotLoggedInError"));
     goToLogin();
   }, [isPrivate]);
 

@@ -1,7 +1,8 @@
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
-import { listItems } from "./listItems";
+import { listItemsLabels } from "./listItemsLabels";
 import { ListItem } from "./ListItem";
+import { useTranslation } from "react-i18next";
 
 const useGoToLastPage = () => {
   const {
@@ -23,7 +24,13 @@ const useGoToLastPage = () => {
 
 export const RapidSequenceInduction: React.FC = () => {
   const { goToAfterAnesthesicInduction } = useRoutes();
+  const { t } = useTranslation("common");
   const goToLastPage = useGoToLastPage();
+
+  const listItems = listItemsLabels.map((item) => ({
+    text: t(item.text),
+    ExtraContent: item.ExtraContent,
+  }));
 
   const renderListItems = listItems.map((item, index) => (
     <ListItem key={index} item={item} index={index} />
@@ -38,9 +45,12 @@ export const RapidSequenceInduction: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToLastPage} label="Voltar" />
+        <Button onClick={goToLastPage} label={t("Navigation.GoBack")} />
 
-        <Button onClick={goToAfterAnesthesicInduction} label="Próximo" />
+        <Button
+          onClick={goToAfterAnesthesicInduction}
+          label={t("Navigation.Next")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

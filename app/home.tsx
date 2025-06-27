@@ -2,6 +2,7 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 
 import type { RouteProps } from "./routes";
@@ -16,12 +17,13 @@ const PageWrapper: React.FC<RouteProps> = ({
   name,
   path,
 }) => {
+  const { t } = useTranslation("common");
   return (
     <Route
       path={path}
       key={path}
       element={
-        <PageLayout title={name} isPrivate={isPrivate}>
+        <PageLayout title={t(`Index.${name}`)} isPrivate={isPrivate}>
           <Component />
         </PageLayout>
       }

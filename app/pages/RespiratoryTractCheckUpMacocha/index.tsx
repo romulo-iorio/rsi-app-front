@@ -1,18 +1,9 @@
-import { useState } from "react";
+import { JSX, useState } from "react";
 
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
 import { TableRow } from "./TableRow";
-
-const tableData = [
-  { parameter: "M: Mallampati II ou IV", score: "5" },
-  { parameter: "A: Apneia obstrutiva do sono", score: "3" },
-  { parameter: "C: Cervical com má extensão", score: "1" },
-  { parameter: "O: Abertura de boca menor que 3 cm", score: "1" },
-  { parameter: "C: Coma", score: "1" },
-  { parameter: "H: Hipóxia severa (80%)", score: "1" },
-  { parameter: "A: Não-anestesista", score: "1" },
-];
+import { useTranslation } from "react-i18next";
 
 const commonClassNames = "text-center text-[1.25rem] mt-[0.5rem] font-bold";
 
@@ -36,8 +27,19 @@ const getText = (sum: number): JSX.Element => {
 
 export const RespiratoryTractCheckUpMacocha: React.FC = () => {
   const { goToRespiratoryTractCheckUpImages, goToPositioning } = useRoutes();
+  const { t } = useTranslation("common");
 
   const [macochaSum, setMacochaSum] = useState<number>(0);
+
+  const tableData = [
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.1"), score: "5" },
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.2"), score: "3" },
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.3"), score: "1" },
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.4"), score: "1" },
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.5"), score: "1" },
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.6"), score: "1" },
+    { parameter: t("RespiratoryTractCheckUpMacocha.TableData.7"), score: "1" },
+  ];
 
   const renderTableData = tableData.map(({ parameter, score }) => (
     <TableRow key={parameter} parameter={parameter} score={score} />
@@ -61,9 +63,13 @@ export const RespiratoryTractCheckUpMacocha: React.FC = () => {
             <thead className="text-[1.25rem]">
               <tr className="border-b-2 border-black">
                 <th className="border-r border-black w-1/2 text-center">
-                  Parâmetro
+                  {t(
+                    "RespiratoryTractCheckUpMacocha.TableData.Header.Parameter"
+                  )}
                 </th>
-                <th className="w-1/2 text-center">Pontuação</th>
+                <th className="w-1/2 text-center">
+                  {t("RespiratoryTractCheckUpMacocha.TableData.Header.Score")}
+                </th>
               </tr>
             </thead>
 
@@ -79,7 +85,9 @@ export const RespiratoryTractCheckUpMacocha: React.FC = () => {
                     type="text"
                   />
                 }
-                parameter="SOMA"
+                parameter={t(
+                  "RespiratoryTractCheckUpMacocha.TableData.Header.Sum"
+                )}
                 centered
               />
             </tbody>
@@ -88,15 +96,18 @@ export const RespiratoryTractCheckUpMacocha: React.FC = () => {
           {text}
 
           <p className={`text-center text-[0.75rem] mt-[0.5rem] text-gray-500`}>
-            *IOT = Intubação orotraqueal
+            {t("RespiratoryTractCheckUpMacocha.TableData.Footer.IOT")}
           </p>
         </div>
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToRespiratoryTractCheckUpImages} label="Voltar" />
+        <Button
+          onClick={goToRespiratoryTractCheckUpImages}
+          label={t("Navigation.GoBack")}
+        />
 
-        <Button onClick={goToPositioning} label="Próximo" />
+        <Button onClick={goToPositioning} label={t("Navigation.Next")} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

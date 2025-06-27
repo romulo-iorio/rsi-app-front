@@ -1,5 +1,6 @@
 import { BaseLayout, Button } from "@/app/components";
 import { useRoutes } from "@/app/hooks";
+import { useTranslation } from "react-i18next";
 
 interface Reference {
   text: string;
@@ -36,6 +37,7 @@ const references: Reference[] = [
 
 export const References: React.FC = () => {
   const { goToAboutTheAuthor } = useRoutes();
+  const { t } = useTranslation("common");
 
   const renderReferences = references.map((reference, index) => (
     <li key={index} className="mb-[1rem]">
@@ -64,7 +66,7 @@ export const References: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToAboutTheAuthor} label="Voltar" />
+        <Button onClick={goToAboutTheAuthor} label={t("Navigation.GoBack")} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

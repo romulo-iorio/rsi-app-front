@@ -1,26 +1,31 @@
 import type { ResetPasswordBody } from "@/app/services/api/reset-password";
+import { TFunction } from "i18next";
 
-export const validateData = (data: ResetPasswordBody | null) => {
+export const validateData = (data: ResetPasswordBody | null, t: TFunction) => {
   const errors: Partial<Record<keyof ResetPasswordBody, string>> = {};
 
   if (!data?.token)
-    errors.token =
-      "Link inválido! Solicite novamente o envio do e-mail na página de recuperar senha";
+    errors.token = t("Pages.NewPassword.ValidationErrors.InvalidToken");
 
-  if (!data?.password) errors.password = "Senha é obrigatória";
+  if (!data?.password)
+    errors.password = t("Pages.NewPassword.ValidationErrors.PasswordRequired");
 
   if (!data?.passwordConfirmation)
-    errors.passwordConfirmation = "Confirmação de senha é obrigatória";
+    errors.passwordConfirmation = t(
+      "Pages.NewPassword.ValidationErrors.PasswordConfirmationRequired"
+    );
 
   if (
     data?.password &&
     data?.passwordConfirmation &&
     data?.password !== data?.passwordConfirmation
   )
-    errors.passwordConfirmation = "As senhas não conferem";
+    errors.passwordConfirmation = t(
+      "Pages.NewPassword.ValidationErrors.PasswordsDoNotMatch"
+    );
 
   if (data?.password && data?.password.length < 6)
-    errors.password = "A senha deve ter no mínimo 6 caracteres";
+    errors.password = t("Pages.NewPassword.ValidationErrors.PasswordTooShort");
 
   return errors;
 };

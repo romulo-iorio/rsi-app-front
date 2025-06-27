@@ -1,8 +1,9 @@
 import { BaseLayout, Button } from "@/app/components";
+import { useTranslation } from "react-i18next";
 import { useRoutes } from "@/app/hooks";
 
 import { ListItem } from "../RapidSequenceInduction/ListItem";
-import { listItems } from "./listItems";
+import { listItemsLabels } from "./listItemsLabels";
 
 export const AwakeIntubation: React.FC = () => {
   const {
@@ -10,6 +11,11 @@ export const AwakeIntubation: React.FC = () => {
     goToRapidSequenceInduction,
     goToDifficultVentilation,
   } = useRoutes();
+  const { t } = useTranslation("common");
+
+  const listItems = listItemsLabels.map((label) => ({
+    text: t(label.text),
+  }));
 
   const renderListItems = listItems.map((item, index) => (
     <ListItem key={index} item={item} index={index} />
@@ -32,13 +38,19 @@ export const AwakeIntubation: React.FC = () => {
           {renderListItems}
         </ol>
 
-        <Button onClick={onClickOnNotSuccess} label="Insucesso?" />
+        <Button
+          onClick={onClickOnNotSuccess}
+          label={t("Pages.AwakeIntubation.NotSuccessful")}
+        />
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToDifficultVentilation} label="Voltar" />
+        <Button
+          onClick={goToDifficultVentilation}
+          label={t("Navigation.GoBack")}
+        />
 
-        <Button onClick={onClickOnNext} label="Próximo" />
+        <Button onClick={onClickOnNext} label={t("Navigation.Next")} />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );

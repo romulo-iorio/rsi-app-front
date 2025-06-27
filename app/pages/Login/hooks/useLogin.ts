@@ -6,24 +6,25 @@ import { login } from "@/app/services/api/login";
 import { useRoutes } from "@/app/hooks";
 import { useState } from "react";
 import { validateData } from "../utils";
-
-const LoginErrorMessages = {
-  USER_DOES_NOT_EXIST: "Não existe um usuário com esse e-mail",
-  INVALID_PASSWORD: "Senha inválida",
-};
-
-type LoginErrorType = keyof typeof LoginErrorMessages;
-
-const defaultErrorMessage = "Falha ao realizar login!";
+import { useTranslation } from "react-i18next";
 
 export const useLogin = () => {
   const { goToDifficultIntubation } = useRoutes();
+  const { t } = useTranslation("common");
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const ErrorMessages = {
+    USER_DOES_NOT_EXIST: t("Pages.Login.ErrorMessages.USER_DOES_NOT_EXIST"),
+    INVALID_PASSWORD: t("Pages.Login.ErrorMessages.INVALID_PASSWORD"),
+  };
+  type LoginErrorType = keyof typeof ErrorMessages;
+
+  const defaultErrorMessage = t("Pages.Login.DefaultErrorMessage");
+
   const doLogin = async () => {
-    const errors = validateData({ email, password });
+    const errors = validateData({ email, password }, t);
 
     const hasErrors = Object.keys(errors).length > 0;
 
@@ -37,8 +38,8 @@ export const useLogin = () => {
     const loginPromise = login({ email, password });
 
     toast.promise(loginPromise, {
-      success: "Login realizado com sucesso! Redirecionando...",
-      pending: "Realizando Login...",
+      success: t("Pages.Login.Success"),
+      pending: t("Pages.Login.Pending"),
     });
 
     try {
@@ -52,12 +53,12 @@ export const useLogin = () => {
       const { type = "" } =
         error.response?.data || ({} as ApiError<LoginErrorType>);
 
-      const isKnownError = Object.keys(LoginErrorMessages).includes(
+      const isKnownError = Object.keys(ErrorMessages).includes(
         type as LoginErrorType
       );
 
       const errorMessage = isKnownError
-        ? LoginErrorMessages[type as LoginErrorType]
+        ? ErrorMessages[type as LoginErrorType]
         : defaultErrorMessage;
 
       toast.error(errorMessage);

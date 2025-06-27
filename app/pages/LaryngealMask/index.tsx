@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
 import { BaseLayout, Button, FlowChartQuestion } from "@/app/components";
@@ -15,6 +16,7 @@ const contentStyle = {
 export const LaryngealMask: React.FC = () => {
   const { goToAfterAnesthesicInduction, goToCervicalAccess } = useRoutes();
   const [showText, setShowText] = useState(false);
+  const { t } = useTranslation("common");
 
   const onClick = () => setShowText(true);
 
@@ -27,10 +29,10 @@ export const LaryngealMask: React.FC = () => {
         />
 
         <p className="bg-[#90C7BEAA] rounded-[1rem] p-2 lg:text-[1rem] text-[0.8rem]">
-          3 tentativas com modelos/tamanhos diferentes​
+          {t("Pages.LaryngealMask.Content")}
         </p>
 
-        <FlowChartQuestion question="Resultado após máscara laríngea?" />
+        <FlowChartQuestion question={t("Pages.LaryngealMask.Question")} />
 
         <div
           className="flex flex-row justify-around items-start gap-[0.5rem] lg:gap-[3rem]"
@@ -38,16 +40,16 @@ export const LaryngealMask: React.FC = () => {
         >
           <div className="flex flex-col justify-around items-center gap-[0.5rem]">
             <Button
-              label="Sucesso ou insucesso com boa ventilação por máscara"
+              label={t("Pages.LaryngealMask.Success")}
               className={optionsButtonsClassName}
               onClick={onClick}
             />
 
-            {showText && <p>Parar e pensar</p>}
+            {showText && <p>{t("Pages.LaryngealMask.StopAndThink")}</p>}
           </div>
 
           <Button
-            label="Insucesso com não-ventilo, não-intubo"
+            label={t("Pages.LaryngealMask.Failure")}
             className={optionsButtonsClassName}
             onClick={goToCervicalAccess}
           />
@@ -55,7 +57,10 @@ export const LaryngealMask: React.FC = () => {
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
-        <Button onClick={goToAfterAnesthesicInduction} label="Voltar" />
+        <Button
+          onClick={goToAfterAnesthesicInduction}
+          label={t("Navigation.GoBack")}
+        />
       </BaseLayout.Buttons>
     </BaseLayout.Root>
   );
