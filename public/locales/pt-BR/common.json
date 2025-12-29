@@ -62,7 +62,8 @@
       }
     },
     "Cover": {
-      "Title": "Manejo de vias aéreas"
+      "Title": "Manuseio da Via Aérea",
+      "LanguageHint": "Click on the flag to change the language to English"
     },
     "DifficultIntubation": {
       "Question": "IOT difícil provável?"
@@ -90,7 +91,7 @@
     },
     "InternationalRecommendations": {
       "Recommendations": {
-        "1": "Duas ou três tentativas com diferentes laringoscópios: comum,\nvideolaringoscópio, etc",
+        "1": "Duas ou três tentativas com diferentes laringoscópios: comum,\nVIDEOLARINGOSCÓPIO, etc",
         "2": "Se falha, duas ou três tentativas com máscaras laríngeas diferentes"
       },
       "Situations": {

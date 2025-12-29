@@ -28,11 +28,6 @@ export const LaryngealMask: React.FC = () => {
           style={contentStyle}
         />
 
-        {/* Caption for Laryngeal Mask */}
-        <p className="absolute left-1/2 transform -translate-x-1/2 top-1/2 mt-[6rem] text-sm font-bold text-gray-600 bg-white/50 px-2 rounded z-0">
-          I-gel®
-        </p>
-
         <p className="bg-[#90C7BEAA] rounded-[1rem] p-2 lg:text-[1rem] text-[0.8rem]">
           {t("Pages.LaryngealMask.Content")}
         </p>
@@ -59,6 +54,11 @@ export const LaryngealMask: React.FC = () => {
             onClick={goToCervicalAccess}
           />
         </div>
+
+        <p className="text-sm font-bold text-gray-500 text-center">
+          I-gel®
+        </p>
+
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
@@ -70,3 +70,5 @@ export const LaryngealMask: React.FC = () => {
     </BaseLayout.Root>
   );
 };
+
+export default LaryngealMask;

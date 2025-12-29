@@ -1,5 +1,8 @@
+const { i18n } = require('./next-i18next.config');
+
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  // i18n removed to prevent conflict with SPA routing
+  i18n,
   async rewrites() {
     return [
       {
