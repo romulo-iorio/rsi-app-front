@@ -17,7 +17,14 @@ export const Login: React.FC = () => {
 
   return (
     <BaseLayout.Root>
-      <BaseLayout.Content className="!pt-[2rem]">
+      <BaseLayout.Content className="!pt-[6rem]">
+        
+        <div className="w-full flex justify-center mb-4">
+            <p className="text-xs text-gray-500 font-medium text-center max-w-[200px]">
+                {t("Pages.Cover.LanguageHint")}
+            </p>
+        </div>
+
         <InputWithLabel
           placeholder={t("Pages.Login.Input.Email.Placeholder")}
           onChange={setEmail}
