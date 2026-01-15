@@ -39,7 +39,7 @@
       "Name": "Plínio Holanda - Anesthesiologist"
     },
     "AfterAnesthesicInduction": {
-      "Content": "Tracheal intubation – maximum 3 attempts (videolaryngoscope, traditional laryngoscope, MacCoy). Capnograph available?",
+      "Content": "Tracheal intubation – maximum 3 attempts (VIDEOLARYNGOSCOPE, traditional laryngoscope, MacCoy). Capnograph available?",
       "FlowChartQuestion": "Successful intubation?",
       "Yes": "Yes",
       "No": "No",
@@ -65,7 +65,8 @@
       }
     },
     "Cover": {
-      "Title": "Airway Management"
+      "Title": "Airway Management", 
+      "LanguageHint": "Clique na bandeira para mudar o idioma para Português" 
     },
     "DifficultIntubation": {
       "Question": "Probable difficult intubation?"
@@ -93,7 +94,7 @@
     },
     "InternationalRecommendations": {
       "Recommendations": {
-        "1": "Two or three attempts with different laryngoscopes: standard, videolaryngoscope, etc.",
+        "1": "Two or three attempts with different laryngoscopes: standard, VIDEOLARYNGOSCOPE, etc.",
         "2": "If failed, two or three attempts with different laryngeal masks"
       },
       "Situations": {

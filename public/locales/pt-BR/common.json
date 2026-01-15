@@ -39,7 +39,7 @@
       "Name": "Plínio Holanda - Anestesista"
     },
     "AfterAnesthesicInduction": {
-      "Content": "Intubação traqueal – máximo 3 tentativas (videolaringoscópio,\nlaringoscópio tradicional, MacCoy). Capnógrafo disponível?​",
+      "Content": "Intubação traqueal – máximo 3 tentativas (VIDEOLARINGOSCÓPIO,\nlaringoscópio tradicional, MacCoy). Capnógrafo disponível?​",
       "FlowChartQuestion": "Sucesso na IOT?",
       "Yes": "Sim",
       "No": "Não",
@@ -65,7 +65,8 @@
       }
     },
     "Cover": {
-      "Title": "Manejo de vias aéreas"
+      "Title": "Manuseio da Via Aérea",
+      "LanguageHint": "Click on the flag to change the language to English"
     },
     "DifficultIntubation": {
       "Question": "IOT difícil provável?"
@@ -93,7 +94,7 @@
     },
     "InternationalRecommendations": {
       "Recommendations": {
-        "1": "Duas ou três tentativas com diferentes laringoscópios: comum,\nvideolaringoscópio, etc",
+        "1": "Duas ou três tentativas com diferentes laringoscópios: comum,\nVIDEOLARINGOSCÓPIO, etc",
         "2": "Se falha, duas ou três tentativas com máscaras laríngeas diferentes"
       },
       "Situations": {

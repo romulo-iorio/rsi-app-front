@@ -54,6 +54,13 @@ export const AfterAnesthesicInduction: React.FC = () => {
             label={t("General.No")}
           />
         </div>
+
+        {/* --- NOVO TEXTO ADICIONADO AQUI --- */}
+        <p className="text-sm font-bold text-gray-500 text-center">
+          Penlon®
+        </p>
+        {/* ---------------------------------- */}
+
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
@@ -62,3 +69,5 @@ export const AfterAnesthesicInduction: React.FC = () => {
     </BaseLayout.Root>
   );
 };
+
+export default AfterAnesthesicInduction;

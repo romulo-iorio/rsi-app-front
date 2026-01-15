@@ -54,6 +54,11 @@ export const LaryngealMask: React.FC = () => {
             onClick={goToCervicalAccess}
           />
         </div>
+
+        <p className="text-sm font-bold text-gray-500 text-center">
+          I-gel®
+        </p>
+
       </BaseLayout.Content>
 
       <BaseLayout.Buttons>
@@ -65,3 +70,5 @@ export const LaryngealMask: React.FC = () => {
     </BaseLayout.Root>
   );
 };
+
+export default LaryngealMask;
